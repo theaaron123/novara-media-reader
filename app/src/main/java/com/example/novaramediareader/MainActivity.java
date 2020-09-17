@@ -2,6 +2,7 @@ package com.example.novaramediareader;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -48,11 +49,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_DRAGGING) {
                     retrieveArticles(++pageNumber);
                 }
             }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                int topRowVerticalPosition =
+                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0).getTop();
+                mSwipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
+            }
         });
+
         retrieveArticles(pageNumber);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
@@ -72,15 +81,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         });
     }
 
-    public void retrieveArticles(int pageNumber) {
+    public void retrieveArticles(final int pageNumberToRetrieve) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = HTTPS_NOVARAMEDIA_COM_API_ARTICLES + pageNumber;
+        String url = HTTPS_NOVARAMEDIA_COM_API_ARTICLES + pageNumberToRetrieve;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
+                        //Log.d( "On repsonse","page number: " + pageNumberToRetrieve);
                         viewItems.addAll(ArticleJsonParser.addItemsFromJSON(response));
                         mAdapter.notifyDataSetChanged();
                     }
@@ -98,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
         viewItems.clear();
-        retrieveArticles(10);
+        retrieveArticles(1);
         mSwipeRefreshLayout.setRefreshing(false);
     }
 }
