@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,10 +20,12 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
     public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+
 
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -51,6 +54,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         retrieveArticles(pageNumber);
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
+                android.R.color.holo_green_dark,
+                android.R.color.holo_orange_dark,
+                android.R.color.holo_blue_dark);
+        mSwipeRefreshLayout.post(new Runnable() {
+
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(true);
+                retrieveArticles(1);
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     public void retrieveArticles(int pageNumber) {
@@ -68,9 +87,18 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                mSwipeRefreshLayout.setRefreshing(false);
                 Toast.makeText(getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT);
             }
         });
         queue.add(stringRequest);
+    }
+
+    @Override
+    public void onRefresh() {
+        mSwipeRefreshLayout.setRefreshing(true);
+        viewItems.clear();
+        retrieveArticles(10);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 }
