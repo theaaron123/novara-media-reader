@@ -18,8 +18,8 @@ public class ArticleJsonParser {
     static List<Articles> addItemsFromJSON(InputStream inputStream) {
         try {
             String jsonDataString = readJSONDataFromFile(inputStream);
-            JSONObject object = new JSONObject(jsonDataString);
-            JSONArray jsonArray = object.getJSONArray("posts");
+            JSONObject jsonObject = new JSONObject(jsonDataString);
+            JSONArray jsonArray = jsonObject.getJSONArray("posts");
             List<Articles> articlesList = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); ++i) {
