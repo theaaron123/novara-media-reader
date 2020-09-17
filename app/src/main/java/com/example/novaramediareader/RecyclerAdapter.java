@@ -24,7 +24,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-
         private TextView name;
         private TextView description;
 
@@ -42,31 +41,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             case TYPE:
 
             default:
-
                 View layoutView = LayoutInflater.from(viewGroup.getContext()).inflate(
                         R.layout.list_item, viewGroup, false);
-
                 return new ItemViewHolder((layoutView));
         }
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-
         int viewType = getItemViewType(i);
 
         switch (viewType) {
             case TYPE:
             default:
-
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
                 Articles articles = (Articles) listRecyclerItem.get(i);
 
                 itemViewHolder.name.setText(articles.getTitle());
                 itemViewHolder.description.setText(articles.getDescription());
         }
-
     }
 
     @Override

@@ -16,8 +16,17 @@ import java.util.List;
 
 public class ArticleJsonParser {
     static List<Articles> addItemsFromJSON(InputStream inputStream) {
+        String jsonDataString = null;
         try {
-            String jsonDataString = readJSONDataFromFile(inputStream);
+            jsonDataString = readJSONDataFromFile(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return addItemsFromJSON(jsonDataString);
+    }
+
+    static List<Articles> addItemsFromJSON(String jsonDataString) {
+        try {
             JSONObject jsonObject = new JSONObject(jsonDataString);
             JSONArray jsonArray = jsonObject.getJSONArray("posts");
             List<Articles> articlesList = new ArrayList<>();
@@ -31,7 +40,7 @@ public class ArticleJsonParser {
                 articlesList.add(new Articles(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim()));
             }
             return articlesList;
-        } catch (JSONException | IOException e) {
+        } catch (JSONException e) {
             Log.d(MainActivity.class.getName(), "addItemsFromJSON: ", e);
         }
         return null;
