@@ -1,53 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ArticleFullscreenFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
-    tools:context=".ArticleFullscreenFragment"
-    android:id="@+id/ArticleFullscreenFragment"
-    android:orientation="horizontal">
+    android:background="#FF424242"
+    android:orientation="vertical"
+    tools:context=".ArticleFullscreenFragment">
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
+
+
+    <TextView
+        android:id="@+id/title_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:gravity="top"
+        android:keepScreenOn="true"
+        android:textStyle="bold"
+        android:text="@string/hello_first_fragment"
+        android:textColor="#000000"
+        android:orientation="vertical"
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/title_content"
+        android:background="@drawable/rounded_corners"
+        android:fadingEdge="horizontal|vertical"
         android:gravity="top"
         android:keepScreenOn="true"
+        android:orientation="vertical"
         android:text="@string/dummy_content"
         android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="" />
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <Button
-                android:id="@+id/dummy_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
-
-        </LinearLayout>
-    </FrameLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:textSize="14sp" />
+</LinearLayout>

@@ -56,10 +56,9 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Article article) {
-                Toast.makeText(getActivity().getApplicationContext(), "Item Clicked " + article.getTitle(), Toast.LENGTH_LONG).show();
-
                 Bundle bundle = new Bundle();
                 bundle.putString("Description", article.getDescription());
+                bundle.putString("Title", article.getTitle());
 
                 FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
                 ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();

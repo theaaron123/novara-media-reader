@@ -113,18 +113,19 @@ public class ArticleFullscreenFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mVisible = true;
 
-        mControlsView = view.findViewById(R.id.fullscreen_content_controls);
         mContentView = view.findViewById(R.id.fullscreen_content);
 
+        String title;
         String description;
         Bundle b = this.getArguments();
         if (b != null) {
+            title = b.getString("Title");
             description = b.getString("Description");
             TextView viewById = (TextView) view.findViewById(R.id.fullscreen_content);
+            TextView titleView = (TextView) view.findViewById(R.id.title_content);
+            titleView.setText(title);
             viewById.setText(description);
         }
-
-
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,11 +133,6 @@ public class ArticleFullscreenFragment extends Fragment {
                 toggle();
             }
         });
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        view.findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override
@@ -185,7 +181,6 @@ public class ArticleFullscreenFragment extends Fragment {
         if (actionBar != null) {
             actionBar.hide();
         }
-        mControlsView.setVisibility(View.GONE);
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
