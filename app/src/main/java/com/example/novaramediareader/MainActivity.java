@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
                     retrieveArticles(++pageNumber);
                 }
             }
@@ -61,8 +61,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 mSwipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
             }
         });
-
-        retrieveArticles(pageNumber);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
-                        //Log.d( "On repsonse","page number: " + pageNumberToRetrieve);
+                        Log.d("On repsonse", "page number: " + pageNumberToRetrieve);
                         viewItems.addAll(ArticleJsonParser.addItemsFromJSON(response));
                         mAdapter.notifyDataSetChanged();
                     }
@@ -108,7 +106,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
         viewItems.clear();
-        retrieveArticles(1);
+        retrieveArticles(0);
+        pageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
     }
 }
