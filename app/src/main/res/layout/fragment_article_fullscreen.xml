@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ArticleFullscreenFragment"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF424242"
-    android:orientation="vertical"
-    tools:context=".ArticleFullscreenFragment">
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
+    android:fillViewport="true">
 
-
-    <TextView
-        android:id="@+id/title_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
-        android:gravity="top"
-        android:keepScreenOn="true"
-        android:textStyle="bold"
-        android:text="@string/hello_first_fragment"
-        android:textColor="#000000"
-        android:orientation="vertical"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/fullscreen_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ArticleFullscreenFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/title_content"
-        android:background="@drawable/rounded_corners"
-        android:fadingEdge="horizontal|vertical"
-        android:gravity="top"
-        android:keepScreenOn="true"
+        android:background="#FF424242"
         android:orientation="vertical"
-        android:text="@string/dummy_content"
-        android:textColor="#000000"
-        android:textSize="14sp" />
-</LinearLayout>
+        tools:context=".ArticleFullscreenFragment">
+        <!-- The primary full-screen view. This can be replaced with whatever view
+             is needed to present your content, e.g. VideoView, SurfaceView,
+             TextureView, etc. -->
+
+
+        <TextView
+            android:id="@+id/title_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:gravity="top"
+            android:keepScreenOn="true"
+            android:orientation="vertical"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_content"
+            android:background="@drawable/rounded_corners"
+            android:fadingEdge="horizontal|vertical"
+            android:gravity="top"
+            android:keepScreenOn="true"
+            android:orientation="vertical"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

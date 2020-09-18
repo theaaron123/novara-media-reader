@@ -36,8 +36,9 @@ public class ArticleJsonParser {
 
                 String name = itemObj.getString("title");
                 String shortDesc = itemObj.getString("short_desc");
+                String permalink = itemObj.getString("permalink");
 
-                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim()));
+                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink));
             }
             return articleList;
         } catch (JSONException e) {

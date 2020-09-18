@@ -4,10 +4,12 @@ public class Article {
 
     private final String titles;
     private final String description;
+    private final String permalink;
 
-    public Article(String name, String date) {
+    public Article(String name, String date, String permalink) {
         this.titles = name;
         this.description = date;
+        this.permalink = permalink;
     }
 
     public String getTitle() {
@@ -16,5 +18,9 @@ public class Article {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getPermalink() {
+        return permalink;
     }
 }

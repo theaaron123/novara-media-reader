@@ -4,19 +4,34 @@ import android.annotation.SuppressLint;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 public class ArticleFullscreenFragment extends Fragment {
     /**
@@ -36,6 +51,7 @@ public class ArticleFullscreenFragment extends Fragment {
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
+    private static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLE_SINGLE = "https:\\/\\/novaramedia.com\\/2020\\/09\\/11\\/reopening-universities-isnt-just-a-threat-to-staff-and-students-its-a-threat-to-communities-too\\/";
     private final Handler mHideHandler = new Handler();
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -80,6 +96,7 @@ public class ArticleFullscreenFragment extends Fragment {
         }
     };
     private View mContentView;
+    private TextView mArticleBody;
     private View mControlsView;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
@@ -114,17 +131,18 @@ public class ArticleFullscreenFragment extends Fragment {
         mVisible = true;
 
         mContentView = view.findViewById(R.id.fullscreen_content);
+        mArticleBody = (TextView) view.findViewById(R.id.fullscreen_content);
 
         String title;
         String description;
         Bundle b = this.getArguments();
         if (b != null) {
             title = b.getString("Title");
-            description = b.getString("Description");
             TextView viewById = (TextView) view.findViewById(R.id.fullscreen_content);
             TextView titleView = (TextView) view.findViewById(R.id.title_content);
             titleView.setText(title);
-            viewById.setText(description);
+            retrieveArticle(b.getString("Permalink"));
+
         }
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +183,28 @@ public class ArticleFullscreenFragment extends Fragment {
         super.onDestroy();
         mContentView = null;
         mControlsView = null;
+    }
+
+    public void retrieveArticle(final String permalink) {
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, permalink,
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("On response", "article id: " + permalink);
+                        Document document = Jsoup.parse(response);
+                        Element mainBody = document.body();
+                        mArticleBody.setText(mainBody.text());
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT);
+            }
+        });
+        queue.add(stringRequest);
     }
 
     private void toggle() {

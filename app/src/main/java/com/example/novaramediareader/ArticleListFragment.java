@@ -59,6 +59,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 Bundle bundle = new Bundle();
                 bundle.putString("Description", article.getDescription());
                 bundle.putString("Title", article.getTitle());
+                bundle.putString("Permalink", article.getPermalink());
 
                 FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
                 ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
