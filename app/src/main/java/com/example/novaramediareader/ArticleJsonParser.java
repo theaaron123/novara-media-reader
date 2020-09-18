@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleJsonParser {
-    static List<Articles> addItemsFromJSON(InputStream inputStream) {
+    static List<Article> addItemsFromJSON(InputStream inputStream) {
         String jsonDataString = null;
         try {
             jsonDataString = readJSONDataFromFile(inputStream);
@@ -25,11 +25,11 @@ public class ArticleJsonParser {
         return addItemsFromJSON(jsonDataString);
     }
 
-    static List<Articles> addItemsFromJSON(String jsonDataString) {
+    static List<Article> addItemsFromJSON(String jsonDataString) {
         try {
             JSONObject jsonObject = new JSONObject(jsonDataString);
             JSONArray jsonArray = jsonObject.getJSONArray("posts");
-            List<Articles> articlesList = new ArrayList<>();
+            List<Article> articleList = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); ++i) {
                 JSONObject itemObj = jsonArray.getJSONObject(i);
@@ -37,11 +37,11 @@ public class ArticleJsonParser {
                 String name = itemObj.getString("title");
                 String shortDesc = itemObj.getString("short_desc");
 
-                articlesList.add(new Articles(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim()));
+                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim()));
             }
-            return articlesList;
+            return articleList;
         } catch (JSONException e) {
-            Log.d(MainActivity.class.getName(), "addItemsFromJSON: ", e);
+            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
         }
         return null;
     }

@@ -17,10 +17,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int TYPE = 1;
     private final Context context;
     private final List<Object> listRecyclerItem;
+    private final OnItemClickListener listener;
 
-    public RecyclerAdapter(Context context, List<Object> listRecyclerItem) {
+    public interface OnItemClickListener {
+        void onItemClick(Article article);
+    }
+
+    public RecyclerAdapter(Context context, List<Object> listRecyclerItem, OnItemClickListener listener) {
         this.context = context;
         this.listRecyclerItem = listRecyclerItem;
+        this.listener = listener;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -48,18 +54,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        int viewType = getItemViewType(i);
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+        bind(viewHolder, listener, position);
+    }
 
-        switch (viewType) {
-            case TYPE:
-            default:
-                ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-                Articles articles = (Articles) listRecyclerItem.get(i);
+    public void bind(final RecyclerView.ViewHolder viewHolder, final OnItemClickListener listener, int position) {
 
-                itemViewHolder.name.setText(articles.getTitle());
-                itemViewHolder.description.setText(articles.getDescription());
-        }
+        ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
+        final Article article = (Article) listRecyclerItem.get(position);
+
+        itemViewHolder.name.setText(article.getTitle());
+        itemViewHolder.description.setText(article.getDescription());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(article);
+            }
+        });
     }
 
     @Override

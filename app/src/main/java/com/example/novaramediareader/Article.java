@@ -1,11 +1,11 @@
 package com.example.novaramediareader;
 
-public class Articles {
+public class Article {
 
     private final String titles;
     private final String description;
 
-    public Articles(String name, String date) {
+    public Article(String name, String date) {
         this.titles = name;
         this.description = date;
     }

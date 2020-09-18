@@ -14,8 +14,8 @@ import static org.junit.Assert.*;
 public class ArticleJsonParserTest {
     @Test
     public void testAddItemsFromJSON() {
-        List<Articles> articlesList = ArticleJsonParser.addItemsFromJSON(InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().openRawResource(R.raw.articles));
+        List<Article> articleList = ArticleJsonParser.addItemsFromJSON(InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().openRawResource(R.raw.articles));
 
-        assertEquals("Article count should be 5", 10, articlesList.size());
+        assertEquals("Article count should be 5", 10, articleList.size());
     }
 }
