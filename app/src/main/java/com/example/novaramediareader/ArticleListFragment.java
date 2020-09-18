@@ -48,8 +48,6 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //getActivity().setContentView(R.layout.article_list);
-
         mRecyclerView = (RecyclerView) view.findViewById(R.id.card_view);
 
         layoutManager = new LinearLayoutManager(getContext());
@@ -57,10 +55,16 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
         mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(Article item) {
-                Toast.makeText(getActivity().getApplicationContext(), "Item Clicked " + item.getTitle(), Toast.LENGTH_LONG).show();
+            public void onItemClick(Article article) {
+                Toast.makeText(getActivity().getApplicationContext(), "Item Clicked " + article.getTitle(), Toast.LENGTH_LONG).show();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Description", article.getDescription());
+
                 FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
-                tx.add(R.id.fragment_container, new ArticleFullscreenFragment()).addToBackStack("tag").commit();
+                ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
+                articleFullscreenFragment.setArguments(bundle);
+                tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreen").commit();
             }
         });
         mRecyclerView.setAdapter(mAdapter);
@@ -107,7 +111,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
-                        Log.d("On repsonse", "page number: " + pageNumberToRetrieve);
+                        Log.d("On response", "page number: " + pageNumberToRetrieve);
                         viewItems.addAll(ArticleJsonParser.addItemsFromJSON(response));
                         mAdapter.notifyDataSetChanged();
                     }

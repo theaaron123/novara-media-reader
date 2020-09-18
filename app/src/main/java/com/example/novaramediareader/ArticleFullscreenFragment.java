@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class ArticleFullscreenFragment extends Fragment {
     /**
@@ -114,6 +115,15 @@ public class ArticleFullscreenFragment extends Fragment {
 
         mControlsView = view.findViewById(R.id.fullscreen_content_controls);
         mContentView = view.findViewById(R.id.fullscreen_content);
+
+        String description;
+        Bundle b = this.getArguments();
+        if (b != null) {
+            description = b.getString("Description");
+            TextView viewById = (TextView) view.findViewById(R.id.fullscreen_content);
+            viewById.setText(description);
+        }
+
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
