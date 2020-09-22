@@ -23,4 +23,4 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-x86-android-26
     - sys-img-armeabi-v7a-android-17
-script:  gradle wrapper && ./gradlew build
+script:  gradle wrapper --gradle-version 6.2 && ./gradlew build
