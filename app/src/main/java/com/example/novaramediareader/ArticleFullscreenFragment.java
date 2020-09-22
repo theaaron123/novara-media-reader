@@ -1,14 +1,6 @@
 package com.example.novaramediareader;
 
 import android.annotation.SuppressLint;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,8 +11,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,7 +38,7 @@ public class ArticleFullscreenFragment extends Fragment {
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
-    private static final boolean AUTO_HIDE = true;
+    private static final boolean AUTO_HIDE = false;
 
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
@@ -51,7 +51,6 @@ public class ArticleFullscreenFragment extends Fragment {
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
-    private static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLE_SINGLE = "https:\\/\\/novaramedia.com\\/2020\\/09\\/11\\/reopening-universities-isnt-just-a-threat-to-staff-and-students-its-a-threat-to-communities-too\\/";
     private final Handler mHideHandler = new Handler();
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -96,8 +95,7 @@ public class ArticleFullscreenFragment extends Fragment {
         }
     };
     private View mContentView;
-    private TextView mArticleBody;
-    private View mControlsView;
+    private WebView mArticleBody;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {
@@ -106,7 +104,6 @@ public class ArticleFullscreenFragment extends Fragment {
             if (actionBar != null) {
                 actionBar.show();
             }
-            //mControlsView.setVisibility(View.VISIBLE);
         }
     };
     private boolean mVisible;
@@ -131,16 +128,21 @@ public class ArticleFullscreenFragment extends Fragment {
         mVisible = true;
 
         mContentView = view.findViewById(R.id.fullscreen_content);
-        mArticleBody = (TextView) view.findViewById(R.id.fullscreen_content);
+        mArticleBody = (WebView) view.findViewById(R.id.fullscreen_content);
 
         String title;
-        String description;
         Bundle b = this.getArguments();
         if (b != null) {
             title = b.getString("Title");
-            TextView viewById = (TextView) view.findViewById(R.id.fullscreen_content);
             TextView titleView = (TextView) view.findViewById(R.id.title_content);
             titleView.setText(title);
+            mArticleBody.getSettings().setJavaScriptEnabled(true);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                mArticleBody.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            } else {
+                mArticleBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            }
             retrieveArticle(b.getString("Permalink"));
 
         }
@@ -182,7 +184,6 @@ public class ArticleFullscreenFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         mContentView = null;
-        mControlsView = null;
     }
 
     public void retrieveArticle(final String permalink) {
@@ -196,7 +197,7 @@ public class ArticleFullscreenFragment extends Fragment {
                         Log.d("On response", "article id: " + permalink);
                         Document document = Jsoup.parse(response);
                         Element mainBody = document.body();
-                        mArticleBody.setText(mainBody.text());
+                        mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("single-articles-copy").html()), "text/html", "UTF-8", permalink);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -261,5 +262,13 @@ public class ArticleFullscreenFragment extends Fragment {
             actionBar = activity.getSupportActionBar();
         }
         return actionBar;
+    }
+
+    private String rewriteHTMLHeader(String body) {
+        String head = "<head><style>img{max-width: 100%; width:auto; height: auto;}  video {\n" +
+                "            max-width: 100%;\n" +
+                "            height: auto;\n" +
+                "         }</style></head>";
+        return "<html>" + head + "<body>" + body + "</body></html>";
     }
 }
