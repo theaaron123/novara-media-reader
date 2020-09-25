@@ -76,8 +76,14 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    retrieveArticles(++pageNumber);
+                    if (isRecyclerScrollable(mRecyclerView)) {
+                        retrieveArticles(++pageNumber);
+                    }
                 }
+            }
+
+            public boolean isRecyclerScrollable(RecyclerView recyclerView) {
+                return recyclerView.computeHorizontalScrollRange() > recyclerView.getWidth() || recyclerView.computeVerticalScrollRange() > recyclerView.getHeight();
             }
 
             @Override

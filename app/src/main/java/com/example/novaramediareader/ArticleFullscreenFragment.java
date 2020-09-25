@@ -98,6 +98,7 @@ public class ArticleFullscreenFragment extends Fragment {
 
     private View mContentView;
     private WebView mArticleBody;
+    private TextView mTitleView;
     private ImageView mImageView;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
@@ -132,23 +133,15 @@ public class ArticleFullscreenFragment extends Fragment {
 
         mContentView = view.findViewById(R.id.fullscreen_content);
         mArticleBody = (WebView) view.findViewById(R.id.fullscreen_content);
-
-        String title;
-        Bundle b = this.getArguments();
-        if (b != null) {
-            title = b.getString("Title");
-            TextView titleView = (TextView) view.findViewById(R.id.title_content);
-            titleView.setText(title);
-            mArticleBody.getSettings().setJavaScriptEnabled(true);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                mArticleBody.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-            } else {
-                mArticleBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-            }
-            retrieveArticle(b.getString("Permalink"));
-
+        mTitleView = (TextView) view.findViewById(R.id.title_content);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mArticleBody.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        } else {
+            mArticleBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
+        mArticleBody.getSettings().setJavaScriptEnabled(true);
+
+        populateUI(this.getArguments());
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +149,13 @@ public class ArticleFullscreenFragment extends Fragment {
                 toggle();
             }
         });
+    }
+
+    public void populateUI(Bundle b) {
+        if (b != null) {
+            mTitleView.setText(b.getString("Title"));
+            retrieveArticle(b.getString("Permalink"));
+        }
     }
 
     @Override
