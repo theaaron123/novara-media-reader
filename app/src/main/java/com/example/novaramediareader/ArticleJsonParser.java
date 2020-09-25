@@ -37,7 +37,7 @@ public class ArticleJsonParser {
                 String name = itemObj.getString("title");
                 String shortDesc = itemObj.getString("short_desc");
                 String permalink = itemObj.getString("permalink");
-                String imagelink = itemObj.getString("thumb_small");
+                String imagelink = itemObj.getString("thumb_medium");
 
                 articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink, imagelink));
             }

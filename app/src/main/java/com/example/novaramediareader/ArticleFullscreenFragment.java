@@ -29,6 +29,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -134,6 +135,7 @@ public class ArticleFullscreenFragment extends Fragment {
         mContentView = view.findViewById(R.id.fullscreen_content);
         mArticleBody = (WebView) view.findViewById(R.id.fullscreen_content);
         mTitleView = (TextView) view.findViewById(R.id.title_content);
+        mImageView = (ImageView) view.findViewById(R.id.article_image);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mArticleBody.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         } else {
@@ -153,6 +155,10 @@ public class ArticleFullscreenFragment extends Fragment {
 
     public void populateUI(Bundle b) {
         if (b != null) {
+            Glide.with(this).load(b.getString("Image"))
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .dontAnimate()
+                    .into(mImageView);
             mTitleView.setText(b.getString("Title"));
             retrieveArticle(b.getString("Permalink"));
         }
