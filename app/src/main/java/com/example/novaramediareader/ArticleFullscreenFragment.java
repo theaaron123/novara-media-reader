@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -94,8 +95,10 @@ public class ArticleFullscreenFragment extends Fragment {
             return false;
         }
     };
+
     private View mContentView;
     private WebView mArticleBody;
+    private ImageView mImageView;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {

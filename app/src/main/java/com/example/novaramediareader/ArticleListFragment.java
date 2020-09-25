@@ -52,6 +52,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
         layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.getItemAnimator().setChangeDuration(0);
 
         mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
@@ -60,6 +61,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 bundle.putString("Description", article.getDescription());
                 bundle.putString("Title", article.getTitle());
                 bundle.putString("Permalink", article.getPermalink());
+                bundle.putString("Image", article.getImagelink());
 
                 FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
                 ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
@@ -67,6 +69,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreen").commit();
             }
         });
+        mAdapter.setHasStableIds(true);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
