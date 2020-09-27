@@ -5,7 +5,7 @@ licenses:
   -
 before_install:
   - wget https://services.gradle.org/distributions/gradle-6.6.1-bin.zip
-  - unzip -qq gradle-5.3-bin.zip
+  - unzip -qq gradle-6.6.1-bin.zip
   - export GRADLE_HOME=$PWD/gradle-6.6.1
   - export PATH=$GRADLE_HOME/bin:$PATH
   - gradle -v
@@ -30,4 +30,4 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-x86-android-26
     - sys-img-armeabi-v7a-android-17
-script:  gradle wrapper --gradle-version 6.2 && ./gradlew build
+script:  gradle wrapper --gradle-version 6.6.1 && ./gradlew build
