@@ -38,7 +38,7 @@
         tools:context=".ArticleListFragment">
 
         <fragment
-            android:name="com.example.novaramediareader.ArticleListFragment"
+            android:name="com.aaronbaker.novaramediareader.ArticleListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"

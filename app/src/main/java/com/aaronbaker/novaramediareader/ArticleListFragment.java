@@ -1,4 +1,4 @@
-package com.example.novaramediareader;
+package com.aaronbaker.novaramediareader;
 
 import android.os.Build;
 import android.os.Bundle;

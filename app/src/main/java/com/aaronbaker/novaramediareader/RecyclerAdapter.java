@@ -1,4 +1,4 @@
-package com.example.novaramediareader;
+package com.aaronbaker.novaramediareader;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.novaramediareader;
+package com.aaronbaker.novaramediareader;
 
 import android.text.Html;
 import android.util.Log;

@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/headlines_fragment"
-        android:name="com.example.novaramediareader.ArticleFullscreenFragment"
+        android:name="com.aaronbaker.novaramediareader.ArticleFullscreenFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2" />
