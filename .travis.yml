@@ -1,14 +1,16 @@
 language: android
-jdk: oraclejdk8
 licenses:
   - '.+'
-  -
 before_install:
   - wget https://services.gradle.org/distributions/gradle-6.6.1-bin.zip
   - unzip -qq gradle-6.6.1-bin.zip
   - export GRADLE_HOME=$PWD/gradle-6.6.1
   - export PATH=$GRADLE_HOME/bin:$PATH
   - gradle -v
+  - mkdir -p ~/.android
+    - touch ~/.android/repositories.cfg
+    - yes | sdkmanager --licenses
+
 
 android:
   components:
