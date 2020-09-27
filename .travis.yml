@@ -1,4 +1,17 @@
 language: android
+licenses:
+  - '.+'
+jdk:
+  - oraclejdk8
+
+before_install:
+  - wget https://services.gradle.org/distributions/gradle-6.6.1-bin.zip
+  - unzip -qq gradle-6.6.1-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-6.6.1
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  - chmod +x gradlew
+  - gradle -v
+
 android:
   components:
     - tools
@@ -8,7 +21,3 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-jdk:
-  - oraclejdk8
-before_install:
-  - chmod +x gradlew
