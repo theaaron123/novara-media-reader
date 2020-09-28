@@ -23,4 +23,4 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     -
-script: ./gradlew clean build
+script:  gradle wrapper --gradle-version 6.6.1 && ./gradlew clean build
