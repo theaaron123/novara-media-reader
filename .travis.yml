@@ -11,6 +11,7 @@ before_install:
   - export PATH=$GRADLE_HOME/bin:$PATH
   - chmod +x gradlew
   - gradle -v
+  - yes | sdkmanager "platforms;android-30"
 
 android:
   components:
@@ -21,9 +22,5 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-x86-android-26
-    - sys-img-armeabi-v7a-android-17
-script:  gradle wrapper --gradle-version 6.6.1 && ./gradlew build
+    -
+script: ./gradlew clean build
