@@ -4,6 +4,6 @@ Android application that provides a native experience for reading articles from 
 [![Build Status](https://travis-ci.org/theaaron123/novara-media-reader.svg?branch=master)](https://travis-ci.org/theaaron123/novara-media-reader)
 
 
-![Alt text](https://user-images.githubusercontent.com/22413964/94065068-e5ee5d80-fdea-11ea-862a-f909ef9955a6.jpg)
-
-![alt text](https://user-images.githubusercontent.com/22413964/94065078-ea1a7b00-fdea-11ea-9bfb-ec1041e3b750.jpg)
+![Screenshot_20200925-154455](https://user-images.githubusercontent.com/22413964/94425287-f9ebe380-018b-11eb-8bf4-06de9bcf8624.jpg)
+![Screenshot_20200925-154505](https://user-images.githubusercontent.com/22413964/94425290-fb1d1080-018b-11eb-8d6d-55e2b1281c9a.jpg)
+![Screenshot_20200925-163309](https://user-images.githubusercontent.com/22413964/94425292-fb1d1080-018b-11eb-9ec0-cddb59f3e865.jpg)
