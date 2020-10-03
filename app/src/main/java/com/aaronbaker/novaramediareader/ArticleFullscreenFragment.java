@@ -274,10 +274,10 @@ public class ArticleFullscreenFragment extends Fragment {
     }
 
     private String rewriteHTMLHeader(String body) {
-        String head = "<head><style>img{max-width: 100%; width:auto; height: auto;}  video {\n" +
+        String head = "<head><style>img{max-width: 100%; width:auto; height: auto;}  iframe{\n" +
                 "            max-width: 100%;\n" +
-                "            height: auto;\n" +
-                "         }</style></head>";
+                "            height: auto;} \n" +
+                "</style></head>";
         return "<html>" + head + "<body>" + body + "</body></html>";
     }
 }
