@@ -2,11 +2,15 @@ package com.aaronbaker.novaramediareader;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,11 +79,6 @@ public class ArticleFullscreenFragment extends Fragment {
                     && activity.getWindow() != null) {
                 activity.getWindow().getDecorView().setSystemUiVisibility(flags);
             }
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.hide();
-            }
-
         }
     };
     /**
@@ -124,6 +123,7 @@ public class ArticleFullscreenFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_article_fullscreen, container, false);
     }
 
@@ -217,6 +217,27 @@ public class ArticleFullscreenFragment extends Fragment {
         queue.add(stringRequest);
     }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_share:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Novara Media link:");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, mArticleBody.getUrl());
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void toggle() {
         if (mVisible) {
             hide();
@@ -227,10 +248,6 @@ public class ArticleFullscreenFragment extends Fragment {
 
     private void hide() {
         // Hide UI first
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
