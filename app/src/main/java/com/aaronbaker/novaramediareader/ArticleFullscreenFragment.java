@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -136,11 +137,7 @@ public class ArticleFullscreenFragment extends Fragment {
         mArticleBody = (WebView) view.findViewById(R.id.fullscreen_content);
         mTitleView = (TextView) view.findViewById(R.id.title_content);
         mImageView = (ImageView) view.findViewById(R.id.article_image);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            mArticleBody.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-        } else {
-            mArticleBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
+
         mArticleBody.getSettings().setJavaScriptEnabled(true);
 
         populateUI(this.getArguments());
@@ -233,6 +230,16 @@ public class ArticleFullscreenFragment extends Fragment {
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, mArticleBody.getUrl());
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
                 return true;
+            case R.id.action_font:
+                if (mArticleBody != null) {
+                    WebSettings mArticleBodySettings = mArticleBody.getSettings();
+                    if (mArticleBodySettings.getTextZoom() == 100) {
+                        mArticleBodySettings.setTextZoom(150);
+                    } else {
+                        mArticleBodySettings.setTextZoom(100);
+                    }
+                }
+
             default:
                 return super.onOptionsItemSelected(item);
         }
