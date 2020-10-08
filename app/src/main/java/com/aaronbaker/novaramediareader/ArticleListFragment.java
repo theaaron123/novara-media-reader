@@ -29,6 +29,10 @@ import java.util.List;
 
 public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
+    public static final String DESCRIPTION = "Description";
+    public static final String TITLE = "Title";
+    public static final String PERMALINK = "Permalink";
+    public static final String IMAGE = "Image";
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -58,10 +62,10 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onItemClick(Article article) {
                 Bundle bundle = new Bundle();
-                bundle.putString("Description", article.getDescription());
-                bundle.putString("Title", article.getTitle());
-                bundle.putString("Permalink", article.getPermalink());
-                bundle.putString("Image", article.getImagelink());
+                bundle.putString(DESCRIPTION, article.getDescription());
+                bundle.putString(TITLE, article.getTitle());
+                bundle.putString(PERMALINK, article.getPermalink());
+                bundle.putString(IMAGE, article.getImagelink());
 
                 FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
                 ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();

@@ -155,12 +155,12 @@ public class ArticleFullscreenFragment extends Fragment {
 
     public void populateUI(Bundle b) {
         if (b != null) {
-            Glide.with(this).load(b.getString("Image"))
+            Glide.with(this).load(b.getString(ArticleListFragment.IMAGE))
                     .placeholder(R.drawable.ic_launcher_background)
                     .dontAnimate()
                     .into(mImageView);
-            mTitleView.setText(b.getString("Title"));
-            retrieveArticle(b.getString("Permalink"));
+            mTitleView.setText(b.getString(ArticleListFragment.TITLE));
+            retrieveArticle(b.getString(ArticleListFragment.PERMALINK));
         }
     }
 
