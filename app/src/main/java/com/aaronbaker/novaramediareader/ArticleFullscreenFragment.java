@@ -2,7 +2,9 @@ package com.aaronbaker.novaramediareader;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +42,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+
 public class ArticleFullscreenFragment extends Fragment {
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -58,6 +61,7 @@ public class ArticleFullscreenFragment extends Fragment {
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
+    private static final String LARGE_TEXT_KEY = "Large Text";
     private final Handler mHideHandler = new Handler();
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -118,6 +122,9 @@ public class ArticleFullscreenFragment extends Fragment {
             hide();
         }
     };
+    private boolean mLargeText;
+    private SharedPreferences mPrefs;
+
 
     @Nullable
     @Override
@@ -140,6 +147,9 @@ public class ArticleFullscreenFragment extends Fragment {
 
         mArticleBody.getSettings().setJavaScriptEnabled(true);
 
+        mPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+        mLargeText = mPrefs.getBoolean(LARGE_TEXT_KEY, false);
+
         populateUI(this.getArguments());
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -159,6 +169,10 @@ public class ArticleFullscreenFragment extends Fragment {
             mTitleView.setText(b.getString(ArticleListFragment.TITLE));
             retrieveArticle(b.getString(ArticleListFragment.PERMALINK));
         }
+
+        if (mLargeText) {
+            mArticleBody.getSettings().setTextZoom(145);
+        }
     }
 
     @Override
@@ -177,6 +191,9 @@ public class ArticleFullscreenFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        SharedPreferences.Editor ed = mPrefs.edit();
+        ed.putBoolean(LARGE_TEXT_KEY, mLargeText);
+        ed.commit();
         if (getActivity() != null && getActivity().getWindow() != null) {
             getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
@@ -218,7 +235,10 @@ public class ArticleFullscreenFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        MenuItem item = menu.findItem(R.id.action_font);
+        item.setChecked(mLargeText);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -234,9 +254,13 @@ public class ArticleFullscreenFragment extends Fragment {
                 if (mArticleBody != null) {
                     WebSettings mArticleBodySettings = mArticleBody.getSettings();
                     if (mArticleBodySettings.getTextZoom() == 100) {
-                        mArticleBodySettings.setTextZoom(150);
+                        mArticleBodySettings.setTextZoom(145);
+                        item.setChecked(true);
+                        mLargeText = true;
                     } else {
                         mArticleBodySettings.setTextZoom(100);
+                        item.setChecked(false);
+                        mLargeText = false;
                     }
                 }
 
