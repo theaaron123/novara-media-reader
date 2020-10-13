@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -61,13 +63,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
-        Button offlineButton = (Button) viewHolder.itemView.findViewById(R.id.article_pin_button);
+        final Button offlineButton = (Button) viewHolder.itemView.findViewById(R.id.article_pin_button);
         offlineButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int iPosition = 0;
                 if (v.getParent().getParent().getParent() instanceof RecyclerView) {
                     iPosition = ((RecyclerView) v.getParent().getParent().getParent())
                             .getChildAdapterPosition((View) v.getParent().getParent());
+                    if (iPosition <= offlinePositions) {
+                        offlinePositions--;
+                        listRecyclerItem.remove(iPosition);
+                        notifyDataSetChanged();
+                        return;
+                    }
                     listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
                     offlinePositions++;
                     listRecyclerItem.remove(iPosition + 1);
