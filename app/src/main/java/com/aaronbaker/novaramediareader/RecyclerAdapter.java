@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private final Context context;
     private final List<Object> listRecyclerItem;
     private final OnItemClickListener listener;
+    private int offlinePositions = -1;
 
     public interface OnItemClickListener {
         void onItemClick(Article article);
@@ -58,7 +60,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
+        Button offlineButton = (Button) viewHolder.itemView.findViewById(R.id.article_pin_button);
+        offlineButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int iPosition = 0;
+                if (v.getParent().getParent().getParent() instanceof RecyclerView) {
+                    iPosition = ((RecyclerView) v.getParent().getParent().getParent())
+                            .getChildAdapterPosition((View) v.getParent().getParent());
+                    listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
+                    offlinePositions++;
+                    listRecyclerItem.remove(iPosition + 1);
+                    notifyDataSetChanged();
+                }
+            }
+        });
+        if (offlinePositions >= (position)) {
+            offlineButton.setBackgroundResource((R.drawable.ic_baseline_offline_pin_green_24));
+        } else {
+            offlineButton.setBackgroundResource((R.drawable.ic_baseline_offline_pin_24));
+        }
         bind(viewHolder, listener, position);
     }
 
