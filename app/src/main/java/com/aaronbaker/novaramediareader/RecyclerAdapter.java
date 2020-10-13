@@ -71,9 +71,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     iPosition = ((RecyclerView) v.getParent().getParent().getParent())
                             .getChildAdapterPosition((View) v.getParent().getParent());
                     if (iPosition <= offlinePositions) {
-                        offlinePositions--;
-                        listRecyclerItem.remove(iPosition);
-                        notifyDataSetChanged();
+                        if (iPosition <= listRecyclerItem.size() && iPosition >= 0) {
+                            offlinePositions--;
+                            listRecyclerItem.remove(iPosition);
+                            notifyDataSetChanged();
+                        }
                         return;
                     }
                     listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
