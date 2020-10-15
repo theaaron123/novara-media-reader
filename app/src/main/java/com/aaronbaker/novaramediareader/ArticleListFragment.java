@@ -4,8 +4,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,7 +40,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
-
+    private SearchView mSearchView;
 
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -111,6 +115,31 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 mSwipeRefreshLayout.setRefreshing(true);
                 retrieveArticles(1);
                 mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+
+        final MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+        mSearchView = (SearchView) myActionMenuItem.getActionView();
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (!mSearchView.isIconified()) {
+                    mSearchView.setIconified(true);
+                    Toast.makeText(getContext(), "Searched " + query, Toast.LENGTH_LONG);
+                }
+                myActionMenuItem.collapseActionView();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
             }
         });
     }

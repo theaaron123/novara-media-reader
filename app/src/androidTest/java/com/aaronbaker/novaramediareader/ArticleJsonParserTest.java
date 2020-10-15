@@ -16,6 +16,6 @@ public class ArticleJsonParserTest {
     public void testAddItemsFromJSON() {
         List<Article> articleList = ArticleJsonParser.addItemsFromJSON(InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().openRawResource(R.raw.articles));
 
-        assertEquals("Article count should be 5", 10, articleList.size());
+        assertEquals("Article count should be 10", 10, articleList.size());
     }
 }
