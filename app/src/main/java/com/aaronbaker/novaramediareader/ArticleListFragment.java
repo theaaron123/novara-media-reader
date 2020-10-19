@@ -9,12 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,6 +50,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.article_list, container, false);
     }
 
@@ -121,8 +122,10 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        //super.onCreateOptionsMenu(menu, inflater);
+        if (menu.size() == 0) {
+            getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        }
 
         final MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
         mSearchView = (SearchView) myActionMenuItem.getActionView();
@@ -131,7 +134,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             public boolean onQueryTextSubmit(String query) {
                 if (!mSearchView.isIconified()) {
                     mSearchView.setIconified(true);
-                    Toast.makeText(getContext(), "Searched " + query, Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(), "Searched " + query, Toast.LENGTH_LONG).show();
                 }
                 myActionMenuItem.collapseActionView();
                 return false;

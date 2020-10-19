@@ -234,7 +234,9 @@ public class ArticleFullscreenFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        if (menu.size() == 0) {
+            getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        }
         MenuItem item = menu.findItem(R.id.action_font);
         item.setChecked(mLargeText);
     }

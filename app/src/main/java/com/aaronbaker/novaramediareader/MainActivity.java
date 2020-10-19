@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        toolbar.inflateMenu(R.menu.menu_scrolling);
         setSupportActionBar(toolbar);
         if (findViewById(R.id.fragment_container) != null) {
 
