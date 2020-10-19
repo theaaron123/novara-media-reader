@@ -40,7 +40,7 @@ public class ArticleJsonParser {
                 String permalink = itemObj.getString("permalink");
                 String imagelink = itemObj.getString("thumb_medium");
 
-                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink, imagelink));
+                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imagelink));
             }
             return articleList;
         } catch (JSONException e) {
@@ -63,7 +63,7 @@ public class ArticleJsonParser {
                 //TODO using wp api you need to make another call to get media using media id
                 // String imagelink = itemObj.getJSONObject("cmb2").getJSONObject("video_metabox").getString("_cmb_alt_thumb");
 
-                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink, ""));
+                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, ""));
             }
             return articleList;
         } catch (JSONException e) {
@@ -88,5 +88,9 @@ public class ArticleJsonParser {
             }
         }
         return new String(builder);
+    }
+
+    private static String stripHTML(String html) {
+        return Html.fromHtml(html).toString().replaceAll("\n", "").trim();
     }
 }
