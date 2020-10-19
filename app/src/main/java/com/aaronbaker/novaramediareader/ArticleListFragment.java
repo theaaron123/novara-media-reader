@@ -1,5 +1,6 @@
 package com.aaronbaker.novaramediareader;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,12 +10,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,21 +34,23 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
     public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
+    public static final String HTTPS_NOVARAMEDIA_COM_API_SEARCH = "https://novaramedia.com/wp-json/wp/v2/posts/?search=";
     public static final String DESCRIPTION = "Description";
     public static final String TITLE = "Title";
     public static final String PERMALINK = "Permalink";
     public static final String IMAGE = "Image";
     private RecyclerView mRecyclerView;
-    private List<Object> viewItems = new ArrayList<>();
+    private List<Article> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private SearchView mSearchView;
 
-    private RecyclerView.Adapter mAdapter;
+    private RecyclerAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     private int pageNumber = 1;
+    private RecyclerAdapter mSearchAdapter;
 
     @Nullable
     @Override
@@ -55,7 +60,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.card_view);
 
@@ -114,7 +119,12 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(true);
-                retrieveArticles(1);
+                Bundle bundle = getArguments();
+                if (bundle != null && bundle.containsKey("QUERY")) {
+                    retrieveSearch(bundle.getString("QUERY"));
+                } else {
+                    retrieveArticles(1);
+                }
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -122,29 +132,51 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        //super.onCreateOptionsMenu(menu, inflater);
+        super.onCreateOptionsMenu(menu, inflater);
         if (menu.size() == 0) {
             getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
         }
+        final MenuItem item = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(this);
+    }
 
-        final MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
-        mSearchView = (SearchView) myActionMenuItem.getActionView();
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                if (!mSearchView.isIconified()) {
-                    mSearchView.setIconified(true);
-                    Toast.makeText(getContext(), "Searched " + query, Toast.LENGTH_LONG).show();
-                }
-                myActionMenuItem.collapseActionView();
-                return false;
-            }
+    private void retrieveSearch(final String query) {
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = HTTPS_NOVARAMEDIA_COM_API_SEARCH + query;
 
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
+                        mSearchAdapter = new RecyclerAdapter(getActivity(), articles, new RecyclerAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(Article article) {
+                                Bundle bundle = new Bundle();
+                                bundle.putString(DESCRIPTION, article.getDescription());
+                                bundle.putString(TITLE, article.getTitle());
+                                bundle.putString(PERMALINK, article.getPermalink());
+                                bundle.putString(IMAGE, article.getImagelink());
+
+                                FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
+                                ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
+                                articleFullscreenFragment.setArguments(bundle);
+                                tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreenSearch").commit();
+                            }
+                        });
+                        mRecyclerView.swapAdapter(mSearchAdapter, true);
+                        Log.d("On response", "page number: " + query);
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
+            public void onErrorResponse(VolleyError error) {
+                mSwipeRefreshLayout.setRefreshing(false);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT);
             }
         });
+        queue.add(stringRequest);
     }
 
     public void retrieveArticles(final int pageNumberToRetrieve) {
@@ -157,7 +189,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     @Override
                     public void onResponse(String response) {
                         Log.d("On response", "page number: " + pageNumberToRetrieve);
-                        viewItems.addAll(ArticleJsonParser.addItemsFromJSON(response));
+                        viewItems.addAll(ArticleJsonParser.addItemsFromJSONArticle(response));
                         mAdapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
@@ -177,5 +209,27 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         retrieveArticles(0);
         pageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Bundle bundle = new Bundle();
+        bundle.putString("QUERY", query);
+        FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
+        ArticleListFragment searchListFragment = new ArticleListFragment();
+        searchListFragment.setArguments(bundle);
+        tx.add(R.id.fragment_container, searchListFragment).addToBackStack("articleFullScreen").commit();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 }

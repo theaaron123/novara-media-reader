@@ -12,20 +12,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class ArticleJsonParser {
-    static List<Article> addItemsFromJSON(InputStream inputStream) {
+    static List<Article> addItemsFromJSONArticle(InputStream inputStream) {
         String jsonDataString = null;
         try {
             jsonDataString = readJSONDataFromFile(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return addItemsFromJSON(jsonDataString);
+        return addItemsFromJSONArticle(jsonDataString);
     }
 
-    static List<Article> addItemsFromJSON(String jsonDataString) {
+    static List<Article> addItemsFromJSONArticle(String jsonDataString) {
         try {
             JSONObject jsonObject = new JSONObject(jsonDataString);
             JSONArray jsonArray = jsonObject.getJSONArray("posts");
@@ -46,6 +47,29 @@ public class ArticleJsonParser {
             Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
         }
         return null;
+    }
+
+    static List<Article> addItemsFromJSONSearch(String searchResponse) {
+        List<Article> articleList = new ArrayList<>();
+        try {
+            JSONArray jsonArray = new JSONArray(searchResponse);
+
+            for (int i = 0; i < jsonArray.length(); ++i) {
+                JSONObject itemObj = jsonArray.getJSONObject(i);
+
+                String name = itemObj.getJSONObject("title").getString("rendered");
+                String shortDesc = itemObj.getJSONObject("excerpt").getString("rendered");
+                String permalink = itemObj.getString("link");
+                //TODO using wp api you need to make another call to get media using media id
+                // String imagelink = itemObj.getJSONObject("cmb2").getJSONObject("video_metabox").getString("_cmb_alt_thumb");
+
+                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink, ""));
+            }
+            return articleList;
+        } catch (JSONException e) {
+            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
+        }
+        return articleList;
     }
 
     private static String readJSONDataFromFile(InputStream inputStream) throws IOException {
