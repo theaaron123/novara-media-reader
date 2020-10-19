@@ -71,16 +71,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Article article) {
-                Bundle bundle = new Bundle();
-                bundle.putString(DESCRIPTION, article.getDescription());
-                bundle.putString(TITLE, article.getTitle());
-                bundle.putString(PERMALINK, article.getPermalink());
-                bundle.putString(IMAGE, article.getImagelink());
-
-                FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
-                ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
-                articleFullscreenFragment.setArguments(bundle);
-                tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreen").commit();
+               transitionToArticle(article);
             }
         });
         mAdapter.setHasStableIds(true);
@@ -154,16 +145,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                         mSearchAdapter = new RecyclerAdapter(getActivity(), articles, new RecyclerAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(Article article) {
-                                Bundle bundle = new Bundle();
-                                bundle.putString(DESCRIPTION, article.getDescription());
-                                bundle.putString(TITLE, article.getTitle());
-                                bundle.putString(PERMALINK, article.getPermalink());
-                                bundle.putString(IMAGE, article.getImagelink());
-
-                                FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
-                                ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
-                                articleFullscreenFragment.setArguments(bundle);
-                                tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreenSearch").commit();
+                                transitionToArticle(article);
                             }
                         });
                         mRecyclerView.swapAdapter(mSearchAdapter, true);
@@ -231,5 +213,18 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    private void transitionToArticle(Article article) {
+        Bundle bundle = new Bundle();
+        bundle.putString(DESCRIPTION, article.getDescription());
+        bundle.putString(TITLE, article.getTitle());
+        bundle.putString(PERMALINK, article.getPermalink());
+        bundle.putString(IMAGE, article.getImagelink());
+
+        FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
+        ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
+        articleFullscreenFragment.setArguments(bundle);
+        tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreen").commit();
     }
 }
