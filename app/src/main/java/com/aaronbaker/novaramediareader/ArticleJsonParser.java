@@ -38,9 +38,9 @@ public class ArticleJsonParser {
                 String name = itemObj.getString("title");
                 String shortDesc = itemObj.getString("short_desc");
                 String permalink = itemObj.getString("permalink");
-                String imagelink = itemObj.getString("thumb_medium");
+                String imageLink = itemObj.getString("thumb_medium");
 
-                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imagelink));
+                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imageLink));
             }
             return articleList;
         } catch (JSONException e) {
@@ -60,14 +60,13 @@ public class ArticleJsonParser {
                 String name = itemObj.getJSONObject("title").getString("rendered");
                 String shortDesc = itemObj.getJSONObject("excerpt").getString("rendered");
                 String permalink = itemObj.getString("link");
-                //TODO using wp api you need to make another call to get media using media id
-                String imagelink = itemObj.getString("featured_media");
+                String imageLink = itemObj.getString("featured_media");
 
-                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imagelink));
+                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink));
             }
             return articleList;
         } catch (JSONException e) {
-            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
+            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSONSearch: ", e);
         }
         return articleList;
     }
@@ -76,7 +75,7 @@ public class ArticleJsonParser {
         try {
             return new JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url");
         } catch (JSONException e) {
-            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
+            Log.d(ArticleListFragment.class.getName(), "parseImageUrlFromJSON: ", e);
         }
         return "";
     }
