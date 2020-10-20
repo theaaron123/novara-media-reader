@@ -41,6 +41,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     public static final String TITLE = "Title";
     public static final String PERMALINK = "Permalink";
     public static final String IMAGE = "Image";
+    private static final String QUERY = "QUERY";
     private RecyclerView mRecyclerView;
     private List<Article> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -71,7 +72,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Article article) {
-               transitionToArticle(article);
+                transitionToArticle(article);
             }
         });
         mAdapter.setHasStableIds(true);
@@ -111,8 +112,8 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(true);
                 Bundle bundle = getArguments();
-                if (bundle != null && bundle.containsKey("QUERY")) {
-                    retrieveSearch(bundle.getString("QUERY"));
+                if (bundle != null && bundle.containsKey(QUERY)) {
+                    retrieveSearch(bundle.getString(QUERY));
                 } else {
                     retrieveArticles(1);
                 }
@@ -133,7 +134,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     private void retrieveSearch(final String query) {
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        final RequestQueue queue = Volley.newRequestQueue(getActivity());
         String url = HTTPS_NOVARAMEDIA_COM_API_SEARCH + query;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -141,7 +142,13 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
-                        List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
+                        final List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
+
+                        for (Article article : articles) {
+                            StringRequest imageRequest = getSearchedArticleImageUrl(article);
+                            queue.add(imageRequest);
+                        }
+
                         mSearchAdapter = new RecyclerAdapter(getActivity(), articles, new RecyclerAdapter.OnItemClickListener() {
                             @Override
                             public void onItemClick(Article article) {
@@ -159,6 +166,25 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             }
         });
         queue.add(stringRequest);
+    }
+
+    private StringRequest getSearchedArticleImageUrl(final Article article) {
+        String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImagelink();
+        return new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        String imageUrlFromJSON = ArticleJsonParser.parseImageUrlFromJSON(response);
+                        article.setImagelink(imageUrlFromJSON);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mSwipeRefreshLayout.setRefreshing(false);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void retrieveArticles(final int pageNumberToRetrieve) {
@@ -202,7 +228,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public boolean onQueryTextSubmit(String query) {
         Bundle bundle = new Bundle();
-        bundle.putString("QUERY", query);
+        bundle.putString(QUERY, query);
         FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
         ArticleListFragment searchListFragment = new ArticleListFragment();
         searchListFragment.setArguments(bundle);

@@ -61,15 +61,24 @@ public class ArticleJsonParser {
                 String shortDesc = itemObj.getJSONObject("excerpt").getString("rendered");
                 String permalink = itemObj.getString("link");
                 //TODO using wp api you need to make another call to get media using media id
-                // String imagelink = itemObj.getJSONObject("cmb2").getJSONObject("video_metabox").getString("_cmb_alt_thumb");
+                String imagelink = itemObj.getString("featured_media");
 
-                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, ""));
+                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imagelink));
             }
             return articleList;
         } catch (JSONException e) {
             Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
         }
         return articleList;
+    }
+
+    static String parseImageUrlFromJSON(String mediaJSON) {
+        try {
+            return new JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url");
+        } catch (JSONException e) {
+            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
+        }
+        return "";
     }
 
     private static String readJSONDataFromFile(InputStream inputStream) throws IOException {
