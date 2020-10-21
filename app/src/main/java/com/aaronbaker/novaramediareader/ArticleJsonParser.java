@@ -80,17 +80,17 @@ public class ArticleJsonParser {
         return "";
     }
 
-    private static String readJSONDataFromFile(InputStream inputStream) throws IOException {
-        StringBuilder builder = new StringBuilder();
+     static String readJSONDataFromFile(InputStream inputStream) throws IOException {
+         StringBuilder builder = new StringBuilder();
 
-        try {
-            String jsonString;
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+         try {
+             String jsonString;
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
-            while ((jsonString = bufferedReader.readLine()) != null) {
-                builder.append(jsonString);
-            }
-        } finally {
+             while ((jsonString = bufferedReader.readLine()) != null) {
+                 builder.append(jsonString);
+             }
+         } finally {
             if (inputStream != null) {
                 inputStream.close();
             }

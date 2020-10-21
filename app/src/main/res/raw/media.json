@@ -1,3082 +1,454 @@
-[
-  {
-    "id": 26570,
-    "date": "2020-10-20T12:04:40",
-    "date_gmt": "2020-10-20T11:04:40",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o.jpg"
+{
+  "id": 26510,
+  "date": "2020-10-19T13:59:24",
+  "date_gmt": "2020-10-19T12:59:24",
+  "guid": {
+    "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1.jpg"
+  },
+  "modified": "2020-10-19T13:59:54",
+  "modified_gmt": "2020-10-19T12:59:54",
+  "slug": "presidential-election-in-bolivia-2",
+  "status": "inherit",
+  "type": "attachment",
+  "link": "https:\/\/novaramedia.com\/2020\/10\/19\/democracy-looks-set-to-return-to-bolivia-what-next\/presidential-election-in-bolivia-2\/",
+  "title": {
+    "rendered": ""
+  },
+  "author": 9,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": [],
+  "smush": {
+    "stats": {
+      "percent": 7.5348493130299659,
+      "bytes": 105317,
+      "size_before": 1397732,
+      "size_after": 1292415,
+      "time": 1.1300000000000006,
+      "api_version": "1.0",
+      "lossy": false,
+      "keep_exif": 0
     },
-    "modified": "2020-10-20T12:04:58",
-    "modified_gmt": "2020-10-20T11:04:58",
-    "slug": "campaigners-against-poverty-light-austerity-bonfire-on-westminster-bridge",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/20\/austerity-might-be-over-but-everything-is-still-terrible\/campaigners-against-poverty-light-austerity-bonfire-on-westminster-bridge\/",
-    "title": {
-      "rendered": ""
-    },
-    "author": 9,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 25.379613583199216,
-        "bytes": 681568,
-        "size_before": 2685494,
-        "size_after": 2003926,
-        "time": 1.4200000000000004,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
+    "sizes": {
+      "medium": {
+        "percent": 6.9800000000000004,
+        "bytes": 4661,
+        "size_before": 66742,
+        "size_after": 62081,
+        "time": 0.029999999999999999
       },
-      "sizes": {
-        "medium": {
-          "percent": 23.559999999999999,
-          "bytes": 28820,
-          "size_before": 122324,
-          "size_after": 93504,
-          "time": 0.029999999999999999
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 93504,
-          "size_after": 93504,
-          "time": 0.040000000000000001
-        },
-        "thumbnail": {
-          "percent": 75.530000000000001,
-          "bytes": 27003,
-          "size_before": 35752,
-          "size_after": 8749,
-          "time": 0.02
-        },
-        "medium_large": {
-          "percent": 26.84,
-          "bytes": 28373,
-          "size_before": 105707,
-          "size_after": 77334,
-          "time": 0.089999999999999997
-        },
-        "1536x1536": {
-          "percent": 11.720000000000001,
-          "bytes": 31384,
-          "size_before": 267795,
-          "size_after": 236411,
-          "time": 0.11
-        },
-        "2048x2048": {
-          "percent": 8.5600000000000005,
-          "bytes": 35326,
-          "size_before": 412714,
-          "size_after": 377388,
-          "time": 0.25
-        },
-        "admin-thumb": {
-          "percent": 81.859999999999999,
-          "bytes": 26902,
-          "size_before": 32865,
-          "size_after": 5963,
-          "time": 0.01
-        },
-        "opengraph": {
-          "percent": 17.93,
-          "bytes": 29087,
-          "size_before": 162191,
-          "size_after": 133104,
-          "time": 0.25
-        },
-        "mobile-16to9": {
-          "percent": 47.909999999999997,
-          "bytes": 27418,
-          "size_before": 57230,
-          "size_after": 29812,
-          "time": 0.059999999999999998
-        },
-        "mobile-21to9": {
-          "percent": 52.380000000000003,
-          "bytes": 27382,
-          "size_before": 52272,
-          "size_after": 24890,
-          "time": 0.029999999999999999
-        },
-        "col4": {
-          "percent": 74.319999999999993,
-          "bytes": 26969,
-          "size_before": 36290,
-          "size_after": 9321,
-          "time": 0.01
-        },
-        "col4-square": {
-          "percent": 65.780000000000001,
-          "bytes": 27134,
-          "size_before": 41249,
-          "size_after": 14115,
-          "time": 0.01
-        },
-        "col4-16to9": {
-          "percent": 76.510000000000005,
-          "bytes": 26953,
-          "size_before": 35230,
-          "size_after": 8277,
-          "time": 0.01
-        },
-        "col6-16to9": {
-          "percent": 62.859999999999999,
-          "bytes": 27176,
-          "size_before": 43230,
-          "size_after": 16054,
-          "time": 0.01
-        },
-        "col6-1to4": {
-          "percent": 75.209999999999994,
-          "bytes": 26969,
-          "size_before": 35860,
-          "size_after": 8891,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 51.420000000000002,
-          "bytes": 27446,
-          "size_before": 53375,
-          "size_after": 25929,
-          "time": 0.01
-        },
-        "col12": {
-          "percent": 31.449999999999999,
-          "bytes": 28170,
-          "size_before": 89558,
-          "size_after": 61388,
-          "time": 0.02
-        },
-        "col12-1to2point3": {
-          "percent": 38.100000000000001,
-          "bytes": 27778,
-          "size_before": 72907,
-          "size_after": 45129,
-          "time": 0.029999999999999999
-        },
-        "col12-16to9": {
-          "percent": 34.280000000000001,
-          "bytes": 27900,
-          "size_before": 81382,
-          "size_after": 53482,
-          "time": 0.070000000000000007
-        },
-        "gallery-mid": {
-          "percent": 37.359999999999999,
-          "bytes": 27861,
-          "size_before": 74570,
-          "size_after": 46709,
-          "time": 0.02
-        },
-        "col18-16to9": {
-          "percent": 22.43,
-          "bytes": 28653,
-          "size_before": 127751,
-          "size_after": 99098,
-          "time": 0.13
-        },
-        "col24-16to9": {
-          "percent": 15.66,
-          "bytes": 29436,
-          "size_before": 187953,
-          "size_after": 158517,
-          "time": 0.070000000000000007
-        },
-        "col24-widescreen-crop": {
-          "percent": 21.640000000000001,
-          "bytes": 28955,
-          "size_before": 133808,
-          "size_after": 104853,
-          "time": 0.029999999999999999
-        },
-        "gallery": {
-          "percent": 17.41,
-          "bytes": 29339,
-          "size_before": 168531,
-          "size_after": 139192,
-          "time": 0.050000000000000003
-        },
-        "col24-featured-crop": {
-          "percent": 18.050000000000001,
-          "bytes": 29134,
-          "size_before": 161446,
-          "size_after": 132312,
-          "time": 0.050000000000000003
-        }
+      "large": {
+        "percent": 0,
+        "bytes": 0,
+        "size_before": 62081,
+        "size_after": 62081,
+        "time": 0.11
+      },
+      "thumbnail": {
+        "percent": 37.439999999999998,
+        "bytes": 3829,
+        "size_before": 10228,
+        "size_after": 6399,
+        "time": 0.01
+      },
+      "medium_large": {
+        "percent": 7.9100000000000001,
+        "bytes": 4491,
+        "size_before": 56797,
+        "size_after": 52306,
+        "time": 0.029999999999999999
+      },
+      "1536x1536": {
+        "percent": 3.9199999999999999,
+        "bytes": 5794,
+        "size_before": 147902,
+        "size_after": 142108,
+        "time": 0.23000000000000001
+      },
+      "2048x2048": {
+        "percent": 2.6200000000000001,
+        "bytes": 5865,
+        "size_before": 223964,
+        "size_after": 218099,
+        "time": 0.080000000000000002
+      },
+      "admin-thumb": {
+        "percent": 44.350000000000001,
+        "bytes": 3764,
+        "size_before": 8487,
+        "size_after": 4723,
+        "time": 0.02
+      },
+      "opengraph": {
+        "percent": 5.1699999999999999,
+        "bytes": 4675,
+        "size_before": 90425,
+        "size_after": 85750,
+        "time": 0.040000000000000001
+      },
+      "mobile-16to9": {
+        "percent": 15.609999999999999,
+        "bytes": 4141,
+        "size_before": 26525,
+        "size_after": 22384,
+        "time": 0.040000000000000001
+      },
+      "mobile-21to9": {
+        "percent": 17.879999999999999,
+        "bytes": 4072,
+        "size_before": 22780,
+        "size_after": 18708,
+        "time": 0.01
+      },
+      "col4": {
+        "percent": 34.329999999999998,
+        "bytes": 3868,
+        "size_before": 11266,
+        "size_after": 7398,
+        "time": 0.01
+      },
+      "col4-square": {
+        "percent": 28.16,
+        "bytes": 3924,
+        "size_before": 13935,
+        "size_after": 10011,
+        "time": 0.029999999999999999
+      },
+      "col4-16to9": {
+        "percent": 36.350000000000001,
+        "bytes": 3827,
+        "size_before": 10527,
+        "size_after": 6700,
+        "time": 0.02
+      },
+      "col6-16to9": {
+        "percent": 23.850000000000001,
+        "bytes": 3972,
+        "size_before": 16655,
+        "size_after": 12683,
+        "time": 0.02
+      },
+      "col6-1to4": {
+        "percent": 33.509999999999998,
+        "bytes": 3799,
+        "size_before": 11336,
+        "size_after": 7537,
+        "time": 0.01
+      },
+      "col8-16to9": {
+        "percent": 17.32,
+        "bytes": 4145,
+        "size_before": 23926,
+        "size_after": 19781,
+        "time": 0.02
+      },
+      "col12": {
+        "percent": 9.4700000000000006,
+        "bytes": 4473,
+        "size_before": 47241,
+        "size_after": 42768,
+        "time": 0.040000000000000001
+      },
+      "col12-1to2point3": {
+        "percent": 11.59,
+        "bytes": 4209,
+        "size_before": 36319,
+        "size_after": 32110,
+        "time": 0.02
+      },
+      "col12-16to9": {
+        "percent": 10.25,
+        "bytes": 4373,
+        "size_before": 42658,
+        "size_after": 38285,
+        "time": 0.040000000000000001
+      },
+      "gallery-mid": {
+        "percent": 11.44,
+        "bytes": 4301,
+        "size_before": 37581,
+        "size_after": 33280,
+        "time": 0.029999999999999999
+      },
+      "col18-16to9": {
+        "percent": 6.54,
+        "bytes": 4645,
+        "size_before": 71012,
+        "size_after": 66367,
+        "time": 0.040000000000000001
+      },
+      "col24-16to9": {
+        "percent": 4.6699999999999999,
+        "bytes": 4957,
+        "size_before": 106163,
+        "size_after": 101206,
+        "time": 0.050000000000000003
+      },
+      "col24-widescreen-crop": {
+        "percent": 5.6900000000000004,
+        "bytes": 4093,
+        "size_before": 71917,
+        "size_after": 67824,
+        "time": 0.029999999999999999
+      },
+      "gallery": {
+        "percent": 5.4400000000000004,
+        "bytes": 5062,
+        "size_before": 93134,
+        "size_after": 88072,
+        "time": 0.11
+      },
+      "col24-featured-crop": {
+        "percent": 4.9699999999999998,
+        "bytes": 4377,
+        "size_before": 88131,
+        "size_after": 83754,
+        "time": 0.059999999999999998
       }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-scaled.jpg'><img width=\"864\" height=\"574\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-864x574.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-768x510.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1536x1020.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-2048x1360.jpg 2048w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-204x135.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-664x441.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-562x373.jpg 562w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1104x733.jpg 1104w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": "<p>Andy Thornley\/Flickr<\/p>\n"
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 2560,
-      "height": 1700,
-      "file": "2020\/10\/15600875166_8d73885d70_o-scaled.jpg",
-      "sizes": {
-        "medium": {
-          "file": "15600875166_8d73885d70_o-864x574.jpg",
-          "width": 864,
-          "height": 574,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-864x574.jpg"
-        },
-        "large": {
-          "file": "15600875166_8d73885d70_o-864x574.jpg",
-          "width": 864,
-          "height": 574,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-864x574.jpg"
-        },
-        "thumbnail": {
-          "file": "15600875166_8d73885d70_o-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "15600875166_8d73885d70_o-768x510.jpg",
-          "width": 768,
-          "height": 510,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-768x510.jpg"
-        },
-        "1536x1536": {
-          "file": "15600875166_8d73885d70_o-1536x1020.jpg",
-          "width": 1536,
-          "height": 1020,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1536x1020.jpg"
-        },
-        "2048x2048": {
-          "file": "15600875166_8d73885d70_o-2048x1360.jpg",
-          "width": 2048,
-          "height": 1360,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-2048x1360.jpg"
-        },
-        "admin-thumb": {
-          "file": "15600875166_8d73885d70_o-150x100.jpg",
-          "width": 150,
-          "height": 100,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-150x100.jpg"
-        },
-        "opengraph": {
-          "file": "15600875166_8d73885d70_o-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "15600875166_8d73885d70_o-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "15600875166_8d73885d70_o-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-460x197.jpg"
-        },
-        "col4": {
-          "file": "15600875166_8d73885d70_o-204x135.jpg",
-          "width": 204,
-          "height": 135,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-204x135.jpg"
-        },
-        "col4-square": {
-          "file": "15600875166_8d73885d70_o-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "15600875166_8d73885d70_o-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "15600875166_8d73885d70_o-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "15600875166_8d73885d70_o-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "15600875166_8d73885d70_o-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-424x238.jpg"
-        },
-        "col12": {
-          "file": "15600875166_8d73885d70_o-664x441.jpg",
-          "width": 664,
-          "height": 441,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-664x441.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "15600875166_8d73885d70_o-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "15600875166_8d73885d70_o-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "15600875166_8d73885d70_o-562x373.jpg",
-          "width": 562,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-562x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "15600875166_8d73885d70_o-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "15600875166_8d73885d70_o-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "15600875166_8d73885d70_o-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "15600875166_8d73885d70_o-1104x733.jpg",
-          "width": 1104,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1104x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "15600875166_8d73885d70_o-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-1304x550.jpg"
-        },
-        "full": {
-          "file": "15600875166_8d73885d70_o-scaled.jpg",
-          "width": 2560,
-          "height": 1700,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-scaled.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "4.5",
-        "credit": "Andy Thornley",
-        "camera": "NIKON D90",
-        "caption": "5 November 2013; London, UK: A placard reading A poster reading 'No Cuts' burns on an 'austerity bonfire' on Westminster Bridge, November 5th",
-        "created_timestamp": "1383678926",
-        "copyright": "",
-        "focal_length": "35",
-        "iso": "1600",
-        "shutter_speed": "0.02",
-        "title": "Campaigners against poverty light 'austerity bonfire' on Westminster Bridge",
-        "orientation": "0",
-        "keywords": [
-          "Austerity",
-          "bonfire",
-          "cuts",
-          "protest",
-          "protesters",
-          "fire",
-          "burn",
-          "sign",
-          "poster",
-          "placard",
-          "people",
-          "gather",
-          "Westminster",
-          "bridge",
-          "government",
-          "coalition"
-        ]
-      },
-      "original_image": "15600875166_8d73885d70_o.jpg"
-    },
-    "post": 26530,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/15600875166_8d73885d70_o-scaled.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26570"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/9"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26570"
-        }
-      ]
     }
   },
-  {
-    "id": 26525,
-    "date": "2020-10-19T16:14:01",
-    "date_gmt": "2020-10-19T15:14:01",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides.jpg"
-    },
-    "modified": "2020-10-19T16:14:01",
-    "modified_gmt": "2020-10-19T15:14:01",
-    "slug": "191020-two-left-landslides",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/19\/two-left-landslides\/191020-two-left-landslides\/",
-    "title": {
-      "rendered": "191020 two left landslides"
-    },
-    "author": 23,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 55.465291779538219,
-        "bytes": 2210080,
-        "size_before": 3984618,
-        "size_after": 1774538,
-        "time": 1.0700000000000003,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
-      },
-      "sizes": {
-        "medium": {
-          "percent": 53.030000000000001,
-          "bytes": 105526,
-          "size_before": 199010,
-          "size_after": 93484,
-          "time": 0.12
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 93484,
-          "size_after": 93484,
-          "time": 0.040000000000000001
-        },
-        "thumbnail": {
-          "percent": 92.769999999999996,
-          "bytes": 104382,
-          "size_before": 112517,
-          "size_after": 8135,
-          "time": 0.01
-        },
-        "medium_large": {
-          "percent": 57.880000000000003,
-          "bytes": 105289,
-          "size_before": 181909,
-          "size_after": 76620,
-          "time": 0.029999999999999999
-        },
-        "1536x1536": {
-          "percent": 30.800000000000001,
-          "bytes": 106974,
-          "size_before": 347293,
-          "size_after": 240319,
-          "time": 0.080000000000000002
-        },
-        "admin-thumb": {
-          "percent": 94.439999999999998,
-          "bytes": 104451,
-          "size_before": 110601,
-          "size_after": 6150,
-          "time": 0.02
-        },
-        "opengraph": {
-          "percent": 40.890000000000001,
-          "bytes": 106376,
-          "size_before": 260122,
-          "size_after": 153746,
-          "time": 0.11
-        },
-        "mobile-16to9": {
-          "percent": 75.420000000000002,
-          "bytes": 104981,
-          "size_before": 139187,
-          "size_after": 34206,
-          "time": 0.02
-        },
-        "mobile-21to9": {
-          "percent": 80.25,
-          "bytes": 104871,
-          "size_before": 130687,
-          "size_after": 25816,
-          "time": 0.040000000000000001
-        },
-        "col4": {
-          "percent": 91.299999999999997,
-          "bytes": 104535,
-          "size_before": 114490,
-          "size_after": 9955,
-          "time": 0.029999999999999999
-        },
-        "col4-square": {
-          "percent": 88.959999999999994,
-          "bytes": 104469,
-          "size_before": 117428,
-          "size_after": 12959,
-          "time": 0.050000000000000003
-        },
-        "col4-16to9": {
-          "percent": 91.359999999999999,
-          "bytes": 104539,
-          "size_before": 114427,
-          "size_after": 9888,
-          "time": 0.029999999999999999
-        },
-        "col6-16to9": {
-          "percent": 84.900000000000006,
-          "bytes": 104677,
-          "size_before": 123292,
-          "size_after": 18615,
-          "time": 0.01
-        },
-        "col6-1to4": {
-          "percent": 92.480000000000004,
-          "bytes": 104419,
-          "size_before": 112910,
-          "size_after": 8491,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 77.989999999999995,
-          "bytes": 104886,
-          "size_before": 134487,
-          "size_after": 29601,
-          "time": 0.01
-        },
-        "col12": {
-          "percent": 63.43,
-          "bytes": 105314,
-          "size_before": 166030,
-          "size_after": 60716,
-          "time": 0.040000000000000001
-        },
-        "col12-1to2point3": {
-          "percent": 69.370000000000005,
-          "bytes": 105098,
-          "size_before": 151510,
-          "size_after": 46412,
-          "time": 0.040000000000000001
-        },
-        "col12-16to9": {
-          "percent": 63.409999999999997,
-          "bytes": 105296,
-          "size_before": 166052,
-          "size_after": 60756,
-          "time": 0.029999999999999999
-        },
-        "gallery-mid": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 60756,
-          "size_after": 60756,
-          "time": 0.02
-        },
-        "col18-16to9": {
-          "percent": 48.060000000000002,
-          "bytes": 105701,
-          "size_before": 219930,
-          "size_after": 114229,
-          "time": 0.040000000000000001
-        },
-        "col24-16to9": {
-          "percent": 36.530000000000001,
-          "bytes": 106519,
-          "size_before": 291622,
-          "size_after": 185103,
-          "time": 0.050000000000000003
-        },
-        "col24-widescreen-crop": {
-          "percent": 50.990000000000002,
-          "bytes": 105695,
-          "size_before": 207278,
-          "size_after": 101583,
-          "time": 0.070000000000000007
-        },
-        "gallery": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 185103,
-          "size_after": 185103,
-          "time": 0.089999999999999997
-        },
-        "col24-featured-crop": {
-          "percent": 43.390000000000001,
-          "bytes": 106082,
-          "size_before": 244493,
-          "size_after": 138411,
-          "time": 0.080000000000000002
-        }
-      }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides.jpg'><img width=\"864\" height=\"486\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-864x486.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-768x432.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1536x864.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-150x84.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-460x259.jpg 460w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-204x114.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-314x176.jpg 314w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-424x238.jpg 424w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-664x373.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-974x548.jpg 974w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1304x733.jpg 1304w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides.jpg 1920w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": ""
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 1920,
-      "height": 1080,
-      "file": "2020\/10\/191020-two-left-landslides.jpg",
-      "sizes": {
-        "medium": {
-          "file": "191020-two-left-landslides-864x486.jpg",
-          "width": 864,
-          "height": 486,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-864x486.jpg"
-        },
-        "large": {
-          "file": "191020-two-left-landslides-864x486.jpg",
-          "width": 864,
-          "height": 486,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-864x486.jpg"
-        },
-        "thumbnail": {
-          "file": "191020-two-left-landslides-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "191020-two-left-landslides-768x432.jpg",
-          "width": 768,
-          "height": 432,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-768x432.jpg"
-        },
-        "1536x1536": {
-          "file": "191020-two-left-landslides-1536x864.jpg",
-          "width": 1536,
-          "height": 864,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1536x864.jpg"
-        },
-        "admin-thumb": {
-          "file": "191020-two-left-landslides-150x84.jpg",
-          "width": 150,
-          "height": 84,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-150x84.jpg"
-        },
-        "opengraph": {
-          "file": "191020-two-left-landslides-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "191020-two-left-landslides-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "191020-two-left-landslides-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-460x197.jpg"
-        },
-        "col4": {
-          "file": "191020-two-left-landslides-204x115.jpg",
-          "width": 204,
-          "height": 115,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-204x115.jpg"
-        },
-        "col4-square": {
-          "file": "191020-two-left-landslides-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "191020-two-left-landslides-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "191020-two-left-landslides-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "191020-two-left-landslides-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "191020-two-left-landslides-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-424x238.jpg"
-        },
-        "col12": {
-          "file": "191020-two-left-landslides-664x374.jpg",
-          "width": 664,
-          "height": 374,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-664x374.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "191020-two-left-landslides-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "191020-two-left-landslides-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "191020-two-left-landslides-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-664x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "191020-two-left-landslides-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "191020-two-left-landslides-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "191020-two-left-landslides-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "191020-two-left-landslides-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1304x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "191020-two-left-landslides-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides-1304x550.jpg"
-        },
-        "full": {
-          "file": "191020-two-left-landslides.jpg",
-          "width": 1920,
-          "height": 1080,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "",
-        "camera": "",
-        "caption": "",
-        "created_timestamp": "0",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "",
-        "orientation": "1"
-      }
-    },
-    "post": 26518,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-two-left-landslides.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26525"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/23"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26525"
-        }
-      ]
-    }
+  "description": {
+    "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg'><img width=\"864\" height=\"576\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg 2048w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg 560w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg 1100w\" \/><\/a><\/p>\n"
   },
-  {
-    "id": 26524,
-    "date": "2020-10-19T16:13:57",
-    "date_gmt": "2020-10-19T15:13:57",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides.jpg"
-    },
-    "modified": "2020-10-19T16:13:57",
-    "modified_gmt": "2020-10-19T15:13:57",
-    "slug": "191020-textless-two-left-landslides",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/19\/two-left-landslides\/191020-textless-two-left-landslides\/",
-    "title": {
-      "rendered": "191020 textless two left landslides"
-    },
-    "author": 23,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 57.188169158236349,
-        "bytes": 2188116,
-        "size_before": 3826169,
-        "size_after": 1638053,
-        "time": 1.1500000000000004,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
-      },
-      "sizes": {
-        "medium": {
-          "percent": 55.210000000000001,
-          "bytes": 104132,
-          "size_before": 188616,
-          "size_after": 84484,
-          "time": 0.029999999999999999
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 84484,
-          "size_after": 84484,
-          "time": 0.070000000000000007
-        },
-        "thumbnail": {
-          "percent": 93.390000000000001,
-          "bytes": 103470,
-          "size_before": 110796,
-          "size_after": 7326,
-          "time": 0.02
-        },
-        "medium_large": {
-          "percent": 60.130000000000003,
-          "bytes": 103999,
-          "size_before": 172950,
-          "size_after": 68951,
-          "time": 0.02
-        },
-        "1536x1536": {
-          "percent": 32.289999999999999,
-          "bytes": 106350,
-          "size_before": 329371,
-          "size_after": 223021,
-          "time": 0.17000000000000001
-        },
-        "admin-thumb": {
-          "percent": 94.819999999999993,
-          "bytes": 103559,
-          "size_before": 109218,
-          "size_after": 5659,
-          "time": 0.01
-        },
-        "opengraph": {
-          "percent": 42.850000000000001,
-          "bytes": 105058,
-          "size_before": 245168,
-          "size_after": 140110,
-          "time": 0.059999999999999998
-        },
-        "mobile-16to9": {
-          "percent": 77.379999999999995,
-          "bytes": 103889,
-          "size_before": 134251,
-          "size_after": 30362,
-          "time": 0.050000000000000003
-        },
-        "mobile-21to9": {
-          "percent": 81.010000000000005,
-          "bytes": 103907,
-          "size_before": 128269,
-          "size_after": 24362,
-          "time": 0.01
-        },
-        "col4": {
-          "percent": 92.010000000000005,
-          "bytes": 103585,
-          "size_before": 112586,
-          "size_after": 9001,
-          "time": 0.029999999999999999
-        },
-        "col4-square": {
-          "percent": 89.939999999999998,
-          "bytes": 103527,
-          "size_before": 115111,
-          "size_after": 11584,
-          "time": 0.01
-        },
-        "col4-16to9": {
-          "percent": 92.069999999999993,
-          "bytes": 103569,
-          "size_before": 112485,
-          "size_after": 8916,
-          "time": 0.01
-        },
-        "col6-16to9": {
-          "percent": 86.170000000000002,
-          "bytes": 103676,
-          "size_before": 120315,
-          "size_after": 16639,
-          "time": 0.040000000000000001
-        },
-        "col6-1to4": {
-          "percent": 92.420000000000002,
-          "bytes": 103576,
-          "size_before": 112067,
-          "size_after": 8491,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 79.680000000000007,
-          "bytes": 103869,
-          "size_before": 130354,
-          "size_after": 26485,
-          "time": 0.040000000000000001
-        },
-        "col12": {
-          "percent": 65.670000000000002,
-          "bytes": 104081,
-          "size_before": 158500,
-          "size_after": 54419,
-          "time": 0.029999999999999999
-        },
-        "col12-1to2point3": {
-          "percent": 70.25,
-          "bytes": 104121,
-          "size_before": 148208,
-          "size_after": 44087,
-          "time": 0.02
-        },
-        "col12-16to9": {
-          "percent": 65.659999999999997,
-          "bytes": 104088,
-          "size_before": 158532,
-          "size_after": 54444,
-          "time": 0.02
-        },
-        "gallery-mid": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 54444,
-          "size_after": 54444,
-          "time": 0.029999999999999999
-        },
-        "col18-16to9": {
-          "percent": 50.060000000000002,
-          "bytes": 104227,
-          "size_before": 208203,
-          "size_after": 103976,
-          "time": 0.11
-        },
-        "col24-16to9": {
-          "percent": 38.210000000000001,
-          "bytes": 105406,
-          "size_before": 275839,
-          "size_after": 170433,
-          "time": 0.059999999999999998
-        },
-        "col24-widescreen-crop": {
-          "percent": 50.789999999999999,
-          "bytes": 104852,
-          "size_before": 206435,
-          "size_after": 101583,
-          "time": 0.10000000000000001
-        },
-        "gallery": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 170433,
-          "size_after": 170433,
-          "time": 0.16
-        },
-        "col24-featured-crop": {
-          "percent": 43.909999999999997,
-          "bytes": 105175,
-          "size_before": 239534,
-          "size_after": 134359,
-          "time": 0.040000000000000001
-        }
-      }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides.jpg'><img width=\"864\" height=\"486\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-864x486.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-768x432.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1536x864.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-150x84.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-460x259.jpg 460w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-204x114.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-314x176.jpg 314w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-424x238.jpg 424w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-664x373.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-974x548.jpg 974w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1304x733.jpg 1304w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides.jpg 1920w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": ""
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 1920,
-      "height": 1080,
-      "file": "2020\/10\/191020-textless-two-left-landslides.jpg",
-      "sizes": {
-        "medium": {
-          "file": "191020-textless-two-left-landslides-864x486.jpg",
-          "width": 864,
-          "height": 486,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-864x486.jpg"
-        },
-        "large": {
-          "file": "191020-textless-two-left-landslides-864x486.jpg",
-          "width": 864,
-          "height": 486,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-864x486.jpg"
-        },
-        "thumbnail": {
-          "file": "191020-textless-two-left-landslides-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "191020-textless-two-left-landslides-768x432.jpg",
-          "width": 768,
-          "height": 432,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-768x432.jpg"
-        },
-        "1536x1536": {
-          "file": "191020-textless-two-left-landslides-1536x864.jpg",
-          "width": 1536,
-          "height": 864,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1536x864.jpg"
-        },
-        "admin-thumb": {
-          "file": "191020-textless-two-left-landslides-150x84.jpg",
-          "width": 150,
-          "height": 84,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-150x84.jpg"
-        },
-        "opengraph": {
-          "file": "191020-textless-two-left-landslides-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "191020-textless-two-left-landslides-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "191020-textless-two-left-landslides-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-460x197.jpg"
-        },
-        "col4": {
-          "file": "191020-textless-two-left-landslides-204x115.jpg",
-          "width": 204,
-          "height": 115,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-204x115.jpg"
-        },
-        "col4-square": {
-          "file": "191020-textless-two-left-landslides-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "191020-textless-two-left-landslides-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "191020-textless-two-left-landslides-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "191020-textless-two-left-landslides-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "191020-textless-two-left-landslides-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-424x238.jpg"
-        },
-        "col12": {
-          "file": "191020-textless-two-left-landslides-664x374.jpg",
-          "width": 664,
-          "height": 374,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-664x374.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "191020-textless-two-left-landslides-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "191020-textless-two-left-landslides-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "191020-textless-two-left-landslides-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-664x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "191020-textless-two-left-landslides-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "191020-textless-two-left-landslides-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "191020-textless-two-left-landslides-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "191020-textless-two-left-landslides-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1304x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "191020-textless-two-left-landslides-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides-1304x550.jpg"
-        },
-        "full": {
-          "file": "191020-textless-two-left-landslides.jpg",
-          "width": 1920,
-          "height": 1080,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "",
-        "camera": "",
-        "caption": "",
-        "created_timestamp": "0",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "",
-        "orientation": "1"
-      }
-    },
-    "post": 26518,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/191020-textless-two-left-landslides.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26524"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/23"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26524"
-        }
-      ]
-    }
+  "caption": {
+    "rendered": "<p>Ueslei Marcelino\/Reuters<\/p>\n"
   },
-  {
-    "id": 26510,
-    "date": "2020-10-19T13:59:24",
-    "date_gmt": "2020-10-19T12:59:24",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1.jpg"
-    },
-    "modified": "2020-10-19T13:59:54",
-    "modified_gmt": "2020-10-19T12:59:54",
-    "slug": "presidential-election-in-bolivia-2",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/19\/democracy-looks-set-to-return-to-bolivia-what-next\/presidential-election-in-bolivia-2\/",
-    "title": {
-      "rendered": ""
-    },
-    "author": 9,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 7.5348493130299659,
-        "bytes": 105317,
-        "size_before": 1397732,
-        "size_after": 1292415,
-        "time": 1.1300000000000006,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
+  "alt_text": "",
+  "media_type": "image",
+  "mime_type": "image\/jpeg",
+  "media_details": {
+    "width": 2560,
+    "height": 1706,
+    "file": "2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
+    "sizes": {
+      "medium": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg",
+        "width": 864,
+        "height": 576,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg"
       },
-      "sizes": {
-        "medium": {
-          "percent": 6.9800000000000004,
-          "bytes": 4661,
-          "size_before": 66742,
-          "size_after": 62081,
-          "time": 0.029999999999999999
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 62081,
-          "size_after": 62081,
-          "time": 0.11
-        },
-        "thumbnail": {
-          "percent": 37.439999999999998,
-          "bytes": 3829,
-          "size_before": 10228,
-          "size_after": 6399,
-          "time": 0.01
-        },
-        "medium_large": {
-          "percent": 7.9100000000000001,
-          "bytes": 4491,
-          "size_before": 56797,
-          "size_after": 52306,
-          "time": 0.029999999999999999
-        },
-        "1536x1536": {
-          "percent": 3.9199999999999999,
-          "bytes": 5794,
-          "size_before": 147902,
-          "size_after": 142108,
-          "time": 0.23000000000000001
-        },
-        "2048x2048": {
-          "percent": 2.6200000000000001,
-          "bytes": 5865,
-          "size_before": 223964,
-          "size_after": 218099,
-          "time": 0.080000000000000002
-        },
-        "admin-thumb": {
-          "percent": 44.350000000000001,
-          "bytes": 3764,
-          "size_before": 8487,
-          "size_after": 4723,
-          "time": 0.02
-        },
-        "opengraph": {
-          "percent": 5.1699999999999999,
-          "bytes": 4675,
-          "size_before": 90425,
-          "size_after": 85750,
-          "time": 0.040000000000000001
-        },
-        "mobile-16to9": {
-          "percent": 15.609999999999999,
-          "bytes": 4141,
-          "size_before": 26525,
-          "size_after": 22384,
-          "time": 0.040000000000000001
-        },
-        "mobile-21to9": {
-          "percent": 17.879999999999999,
-          "bytes": 4072,
-          "size_before": 22780,
-          "size_after": 18708,
-          "time": 0.01
-        },
-        "col4": {
-          "percent": 34.329999999999998,
-          "bytes": 3868,
-          "size_before": 11266,
-          "size_after": 7398,
-          "time": 0.01
-        },
-        "col4-square": {
-          "percent": 28.16,
-          "bytes": 3924,
-          "size_before": 13935,
-          "size_after": 10011,
-          "time": 0.029999999999999999
-        },
-        "col4-16to9": {
-          "percent": 36.350000000000001,
-          "bytes": 3827,
-          "size_before": 10527,
-          "size_after": 6700,
-          "time": 0.02
-        },
-        "col6-16to9": {
-          "percent": 23.850000000000001,
-          "bytes": 3972,
-          "size_before": 16655,
-          "size_after": 12683,
-          "time": 0.02
-        },
-        "col6-1to4": {
-          "percent": 33.509999999999998,
-          "bytes": 3799,
-          "size_before": 11336,
-          "size_after": 7537,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 17.32,
-          "bytes": 4145,
-          "size_before": 23926,
-          "size_after": 19781,
-          "time": 0.02
-        },
-        "col12": {
-          "percent": 9.4700000000000006,
-          "bytes": 4473,
-          "size_before": 47241,
-          "size_after": 42768,
-          "time": 0.040000000000000001
-        },
-        "col12-1to2point3": {
-          "percent": 11.59,
-          "bytes": 4209,
-          "size_before": 36319,
-          "size_after": 32110,
-          "time": 0.02
-        },
-        "col12-16to9": {
-          "percent": 10.25,
-          "bytes": 4373,
-          "size_before": 42658,
-          "size_after": 38285,
-          "time": 0.040000000000000001
-        },
-        "gallery-mid": {
-          "percent": 11.44,
-          "bytes": 4301,
-          "size_before": 37581,
-          "size_after": 33280,
-          "time": 0.029999999999999999
-        },
-        "col18-16to9": {
-          "percent": 6.54,
-          "bytes": 4645,
-          "size_before": 71012,
-          "size_after": 66367,
-          "time": 0.040000000000000001
-        },
-        "col24-16to9": {
-          "percent": 4.6699999999999999,
-          "bytes": 4957,
-          "size_before": 106163,
-          "size_after": 101206,
-          "time": 0.050000000000000003
-        },
-        "col24-widescreen-crop": {
-          "percent": 5.6900000000000004,
-          "bytes": 4093,
-          "size_before": 71917,
-          "size_after": 67824,
-          "time": 0.029999999999999999
-        },
-        "gallery": {
-          "percent": 5.4400000000000004,
-          "bytes": 5062,
-          "size_before": 93134,
-          "size_after": 88072,
-          "time": 0.11
-        },
-        "col24-featured-crop": {
-          "percent": 4.9699999999999998,
-          "bytes": 4377,
-          "size_before": 88131,
-          "size_after": 83754,
-          "time": 0.059999999999999998
-        }
+      "large": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg",
+        "width": 864,
+        "height": 576,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg"
+      },
+      "thumbnail": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x150.jpg",
+        "width": 150,
+        "height": 150,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x150.jpg"
+      },
+      "medium_large": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg",
+        "width": 768,
+        "height": 512,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg"
+      },
+      "1536x1536": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg",
+        "width": 1536,
+        "height": 1024,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg"
+      },
+      "2048x2048": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg",
+        "width": 2048,
+        "height": 1365,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg"
+      },
+      "admin-thumb": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg",
+        "width": 150,
+        "height": 100,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg"
+      },
+      "opengraph": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1200x630.jpg"
+      },
+      "mobile-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x259.jpg",
+        "width": 460,
+        "height": 259,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x259.jpg"
+      },
+      "mobile-21to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x197.jpg",
+        "width": 460,
+        "height": 197,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x197.jpg"
+      },
+      "col4": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg",
+        "width": 204,
+        "height": 136,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg"
+      },
+      "col4-square": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x204.jpg",
+        "width": 204,
+        "height": 204,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x204.jpg"
+      },
+      "col4-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x114.jpg",
+        "width": 204,
+        "height": 114,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x114.jpg"
+      },
+      "col6-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x176.jpg",
+        "width": 314,
+        "height": 176,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x176.jpg"
+      },
+      "col6-1to4": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x78.jpg",
+        "width": 314,
+        "height": 78,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x78.jpg"
+      },
+      "col8-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-424x238.jpg",
+        "width": 424,
+        "height": 238,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-424x238.jpg"
+      },
+      "col12": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg",
+        "width": 664,
+        "height": 443,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg"
+      },
+      "col12-1to2point3": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x288.jpg",
+        "width": 664,
+        "height": 288,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x288.jpg"
+      },
+      "col12-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x373.jpg",
+        "width": 664,
+        "height": 373,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x373.jpg"
+      },
+      "gallery-mid": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg",
+        "width": 560,
+        "height": 373,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg"
+      },
+      "col18-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-974x548.jpg",
+        "width": 974,
+        "height": 548,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-974x548.jpg"
+      },
+      "col24-16to9": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x733.jpg",
+        "width": 1304,
+        "height": 733,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x733.jpg"
+      },
+      "col24-widescreen-crop": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x400.jpg",
+        "width": 1304,
+        "height": 400,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x400.jpg"
+      },
+      "gallery": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg",
+        "width": 1100,
+        "height": 733,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg"
+      },
+      "col24-featured-crop": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x550.jpg",
+        "width": 1304,
+        "height": 550,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x550.jpg"
+      },
+      "full": {
+        "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
+        "width": 2560,
+        "height": 1706,
+        "mime_type": "image\/jpeg",
+        "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg"
       }
     },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg'><img width=\"864\" height=\"576\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg 2048w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg 560w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg 1100w\" \/><\/a><\/p>\n"
+    "image_meta": {
+      "aperture": "0",
+      "credit": "REUTERS",
+      "camera": "",
+      "caption": "Supporters celebrate after an unofficial rapid count of the vote indicated Bolivia's socialist candidate Luis Arce is set to win the country's presidential election without the need for a run-off, in La Paz, Bolivia October 19, 2020. REUTERS\/Ueslei Marcelino",
+      "created_timestamp": "1603084927",
+      "copyright": "",
+      "focal_length": "0",
+      "iso": "0",
+      "shutter_speed": "0",
+      "title": "Presidential election in Bolivia",
+      "orientation": "0"
     },
-    "caption": {
-      "rendered": "<p>Ueslei Marcelino\/Reuters<\/p>\n"
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 2560,
-      "height": 1706,
-      "file": "2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
-      "sizes": {
-        "medium": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg"
-        },
-        "large": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-864x576.jpg"
-        },
-        "thumbnail": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg",
-          "width": 768,
-          "height": 512,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-768x512.jpg"
-        },
-        "1536x1536": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg",
-          "width": 1536,
-          "height": 1024,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1536x1024.jpg"
-        },
-        "2048x2048": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg",
-          "width": 2048,
-          "height": 1365,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-2048x1365.jpg"
-        },
-        "admin-thumb": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg",
-          "width": 150,
-          "height": 100,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-150x100.jpg"
-        },
-        "opengraph": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-460x197.jpg"
-        },
-        "col4": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg",
-          "width": 204,
-          "height": 136,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x136.jpg"
-        },
-        "col4-square": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-424x238.jpg"
-        },
-        "col12": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg",
-          "width": 664,
-          "height": 443,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x443.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg",
-          "width": 560,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-560x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg",
-          "width": 1100,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1100x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-1304x550.jpg"
-        },
-        "full": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
-          "width": 2560,
-          "height": 1706,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "REUTERS",
-        "camera": "",
-        "caption": "Supporters celebrate after an unofficial rapid count of the vote indicated Bolivia's socialist candidate Luis Arce is set to win the country's presidential election without the need for a run-off, in La Paz, Bolivia October 19, 2020. REUTERS\/Ueslei Marcelino",
-        "created_timestamp": "1603084927",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "Presidential election in Bolivia",
-        "orientation": "0"
-      },
-      "original_image": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1.jpg"
-    },
-    "post": 26503,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26510"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/9"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26510"
-        }
-      ]
-    }
+    "original_image": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1.jpg"
   },
-  {
-    "id": 26509,
-    "date": "2020-10-19T13:58:01",
-    "date_gmt": "2020-10-19T12:58:01",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION.jpg"
-    },
-    "modified": "2020-10-19T13:58:14",
-    "modified_gmt": "2020-10-19T12:58:14",
-    "slug": "presidential-election-in-bolivia",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/19\/democracy-looks-set-to-return-to-bolivia-what-next\/presidential-election-in-bolivia\/",
-    "title": {
-      "rendered": ""
-    },
-    "author": 9,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 9.0573393685024008,
-        "bytes": 120481,
-        "size_before": 1330203,
-        "size_after": 1209722,
-        "time": 1.0800000000000003,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
-      },
-      "sizes": {
-        "medium": {
-          "percent": 8.5399999999999991,
-          "bytes": 5389,
-          "size_before": 63069,
-          "size_after": 57680,
-          "time": 0.070000000000000007
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 57680,
-          "size_after": 57680,
-          "time": 0.050000000000000003
-        },
-        "thumbnail": {
-          "percent": 40.299999999999997,
-          "bytes": 4082,
-          "size_before": 10128,
-          "size_after": 6046,
-          "time": 0.01
-        },
-        "medium_large": {
-          "percent": 9.5,
-          "bytes": 5090,
-          "size_before": 53571,
-          "size_after": 48481,
-          "time": 0.02
-        },
-        "1536x1536": {
-          "percent": 4.9900000000000002,
-          "bytes": 6945,
-          "size_before": 139241,
-          "size_after": 132296,
-          "time": 0.070000000000000007
-        },
-        "2048x2048": {
-          "percent": 3.9100000000000001,
-          "bytes": 8275,
-          "size_before": 211457,
-          "size_after": 203182,
-          "time": 0.20999999999999999
-        },
-        "admin-thumb": {
-          "percent": 47.390000000000001,
-          "bytes": 3980,
-          "size_before": 8398,
-          "size_after": 4418,
-          "time": 0.02
-        },
-        "opengraph": {
-          "percent": 6.46,
-          "bytes": 5583,
-          "size_before": 86422,
-          "size_after": 80839,
-          "time": 0.089999999999999997
-        },
-        "mobile-16to9": {
-          "percent": 17.850000000000001,
-          "bytes": 4539,
-          "size_before": 25434,
-          "size_after": 20895,
-          "time": 0.029999999999999999
-        },
-        "mobile-21to9": {
-          "percent": 20.07,
-          "bytes": 4433,
-          "size_before": 22092,
-          "size_after": 17659,
-          "time": 0.01
-        },
-        "col4": {
-          "percent": 37.390000000000001,
-          "bytes": 4086,
-          "size_before": 10929,
-          "size_after": 6843,
-          "time": 0.02
-        },
-        "col4-square": {
-          "percent": 30.489999999999998,
-          "bytes": 4164,
-          "size_before": 13659,
-          "size_after": 9495,
-          "time": 0.01
-        },
-        "col4-16to9": {
-          "percent": 39.109999999999999,
-          "bytes": 4056,
-          "size_before": 10372,
-          "size_after": 6316,
-          "time": 0.02
-        },
-        "col6-16to9": {
-          "percent": 26.260000000000002,
-          "bytes": 4228,
-          "size_before": 16103,
-          "size_after": 11875,
-          "time": 0.01
-        },
-        "col6-1to4": {
-          "percent": 35.880000000000003,
-          "bytes": 4069,
-          "size_before": 11339,
-          "size_after": 7270,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 19.539999999999999,
-          "bytes": 4483,
-          "size_before": 22941,
-          "size_after": 18458,
-          "time": 0.01
-        },
-        "col12": {
-          "percent": 11.289999999999999,
-          "bytes": 5053,
-          "size_before": 44756,
-          "size_after": 39703,
-          "time": 0.02
-        },
-        "col12-1to2point3": {
-          "percent": 13.48,
-          "bytes": 4731,
-          "size_before": 35086,
-          "size_after": 30355,
-          "time": 0.040000000000000001
-        },
-        "col12-16to9": {
-          "percent": 12.039999999999999,
-          "bytes": 4901,
-          "size_before": 40721,
-          "size_after": 35820,
-          "time": 0.02
-        },
-        "gallery-mid": {
-          "percent": 13.44,
-          "bytes": 4801,
-          "size_before": 35727,
-          "size_after": 30926,
-          "time": 0.02
-        },
-        "col18-16to9": {
-          "percent": 7.9299999999999997,
-          "bytes": 5332,
-          "size_before": 67221,
-          "size_after": 61889,
-          "time": 0.029999999999999999
-        },
-        "col24-16to9": {
-          "percent": 5.9199999999999999,
-          "bytes": 5962,
-          "size_before": 100726,
-          "size_after": 94764,
-          "time": 0.080000000000000002
-        },
-        "col24-widescreen-crop": {
-          "percent": 7.1799999999999997,
-          "bytes": 5041,
-          "size_before": 70209,
-          "size_after": 65168,
-          "time": 0.050000000000000003
-        },
-        "gallery": {
-          "percent": 6.6399999999999997,
-          "bytes": 5829,
-          "size_before": 87723,
-          "size_after": 81894,
-          "time": 0.089999999999999997
-        },
-        "col24-featured-crop": {
-          "percent": 6.3700000000000001,
-          "bytes": 5429,
-          "size_before": 85199,
-          "size_after": 79770,
-          "time": 0.070000000000000007
-        }
+  "post": 26503,
+  "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1-scaled.jpg",
+  "_links": {
+    "self": [
+      {
+        "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26510"
       }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-scaled.jpg'><img width=\"864\" height=\"576\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-864x576.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-768x512.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1536x1024.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-2048x1365.jpg 2048w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x136.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x443.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-560x373.jpg 560w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1100x733.jpg 1100w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": ""
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 2560,
-      "height": 1706,
-      "file": "2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-scaled.jpg",
-      "sizes": {
-        "medium": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-864x576.jpg"
-        },
-        "large": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-864x576.jpg"
-        },
-        "thumbnail": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-768x512.jpg",
-          "width": 768,
-          "height": 512,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-768x512.jpg"
-        },
-        "1536x1536": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1536x1024.jpg",
-          "width": 1536,
-          "height": 1024,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1536x1024.jpg"
-        },
-        "2048x2048": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-2048x1365.jpg",
-          "width": 2048,
-          "height": 1365,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-2048x1365.jpg"
-        },
-        "admin-thumb": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-150x100.jpg",
-          "width": 150,
-          "height": 100,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-150x100.jpg"
-        },
-        "opengraph": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-460x197.jpg"
-        },
-        "col4": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x136.jpg",
-          "width": 204,
-          "height": 136,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x136.jpg"
-        },
-        "col4-square": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-424x238.jpg"
-        },
-        "col12": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x443.jpg",
-          "width": 664,
-          "height": 443,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x443.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-560x373.jpg",
-          "width": 560,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-560x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1100x733.jpg",
-          "width": 1100,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1100x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-1304x550.jpg"
-        },
-        "full": {
-          "file": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-scaled.jpg",
-          "width": 2560,
-          "height": 1706,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-scaled.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "REUTERS",
-        "camera": "",
-        "caption": "Supporters celebrate after an unofficial rapid count of the vote indicated Bolivia's socialist candidate Luis Arce is set to win the country's presidential election without the need for a run-off, in La Paz, Bolivia October 19, 2020. REUTERS\/Ueslei Marcelino",
-        "created_timestamp": "1603084927",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "Presidential election in Bolivia",
-        "orientation": "1"
-      },
-      "original_image": "2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION.jpg"
-    },
-    "post": 26503,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/2020-10-19T052207Z_803280629_RC2HLJ9J0FER_RTRMADP_3_BOLIVIA-ELECTION-scaled.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26509"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/9"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26509"
-        }
-      ]
-    }
-  },
-  {
-    "id": 26490,
-    "date": "2020-10-18T09:20:25",
-    "date_gmt": "2020-10-18T08:20:25",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k.jpg"
-    },
-    "modified": "2020-10-18T09:20:25",
-    "modified_gmt": "2020-10-18T08:20:25",
-    "slug": "8076759765_1cd1fdaf63_k",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/20\/welcome-to-strike-school-the-programme-teaching-global-workers-to-fight-back\/8076759765_1cd1fdaf63_k\/",
-    "title": {
-      "rendered": "8076759765_1cd1fdaf63_k"
-    },
-    "author": 13,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 5.5134624907554688,
-        "bytes": 128152,
-        "size_before": 2324347,
-        "size_after": 2196195,
-        "time": 1.0200000000000002,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
-      },
-      "sizes": {
-        "medium": {
-          "percent": 5.0999999999999996,
-          "bytes": 6712,
-          "size_before": 131548,
-          "size_after": 124836,
-          "time": 0.040000000000000001
-        },
-        "large": {
-          "percent": 0,
-          "bytes": 0,
-          "size_before": 124836,
-          "size_after": 124836,
-          "time": 0.040000000000000001
-        },
-        "thumbnail": {
-          "percent": 26.52,
-          "bytes": 3510,
-          "size_before": 13235,
-          "size_after": 9725,
-          "time": 0.01
-        },
-        "medium_large": {
-          "percent": 5.6699999999999999,
-          "bytes": 6131,
-          "size_before": 108195,
-          "size_after": 102064,
-          "time": 0.029999999999999999
-        },
-        "1536x1536": {
-          "percent": 3.23,
-          "bytes": 11012,
-          "size_before": 340544,
-          "size_after": 329532,
-          "time": 0.11
-        },
-        "admin-thumb": {
-          "percent": 33.049999999999997,
-          "bytes": 3387,
-          "size_before": 10248,
-          "size_after": 6861,
-          "time": 0.02
-        },
-        "opengraph": {
-          "percent": 3.8900000000000001,
-          "bytes": 7604,
-          "size_before": 195228,
-          "size_after": 187624,
-          "time": 0.059999999999999998
-        },
-        "mobile-16to9": {
-          "percent": 10.42,
-          "bytes": 4550,
-          "size_before": 43669,
-          "size_after": 39119,
-          "time": 0.040000000000000001
-        },
-        "mobile-21to9": {
-          "percent": 12.050000000000001,
-          "bytes": 4310,
-          "size_before": 35761,
-          "size_after": 31451,
-          "time": 0.070000000000000007
-        },
-        "col4": {
-          "percent": 24.140000000000001,
-          "bytes": 3547,
-          "size_before": 14692,
-          "size_after": 11145,
-          "time": 0.01
-        },
-        "col4-square": {
-          "percent": 18.920000000000002,
-          "bytes": 3799,
-          "size_before": 20079,
-          "size_after": 16280,
-          "time": 0.02
-        },
-        "col4-16to9": {
-          "percent": 25.77,
-          "bytes": 3540,
-          "size_before": 13739,
-          "size_after": 10199,
-          "time": 0.01
-        },
-        "col6-16to9": {
-          "percent": 16.219999999999999,
-          "bytes": 3961,
-          "size_before": 24424,
-          "size_after": 20463,
-          "time": 0.050000000000000003
-        },
-        "col6-1to4": {
-          "percent": 24.84,
-          "bytes": 3544,
-          "size_before": 14270,
-          "size_after": 10726,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 11.619999999999999,
-          "bytes": 4444,
-          "size_before": 38235,
-          "size_after": 33791,
-          "time": 0.01
-        },
-        "col12": {
-          "percent": 6.46,
-          "bytes": 5526,
-          "size_before": 85571,
-          "size_after": 80045,
-          "time": 0.040000000000000001
-        },
-        "col12-1to2point3": {
-          "percent": 7.9299999999999997,
-          "bytes": 5047,
-          "size_before": 63633,
-          "size_after": 58586,
-          "time": 0.02
-        },
-        "col12-16to9": {
-          "percent": 7.04,
-          "bytes": 5474,
-          "size_before": 77759,
-          "size_after": 72285,
-          "time": 0.029999999999999999
-        },
-        "gallery-mid": {
-          "percent": 7.9000000000000004,
-          "bytes": 5125,
-          "size_before": 64863,
-          "size_after": 59738,
-          "time": 0.02
-        },
-        "col18-16to9": {
-          "percent": 4.6500000000000004,
-          "bytes": 6762,
-          "size_before": 145295,
-          "size_after": 138533,
-          "time": 0.040000000000000001
-        },
-        "col24-16to9": {
-          "percent": 3.6200000000000001,
-          "bytes": 8478,
-          "size_before": 234431,
-          "size_after": 225953,
-          "time": 0.13
-        },
-        "col24-widescreen-crop": {
-          "percent": 4.54,
-          "bytes": 6447,
-          "size_before": 141870,
-          "size_after": 135423,
-          "time": 0.059999999999999998
-        },
-        "gallery": {
-          "percent": 4.0899999999999999,
-          "bytes": 8040,
-          "size_before": 196557,
-          "size_after": 188517,
-          "time": 0.059999999999999998
-        },
-        "col24-featured-crop": {
-          "percent": 3.8799999999999999,
-          "bytes": 7202,
-          "size_before": 185665,
-          "size_after": 178463,
-          "time": 0.089999999999999997
-        }
+    ],
+    "collection": [
+      {
+        "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
       }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k.jpg'><img width=\"864\" height=\"576\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 864px) 100vw, 864px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-864x576.jpg 864w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-768x512.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1536x1024.jpg 1536w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-204x136.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-664x443.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-560x373.jpg 560w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1100x733.jpg 1100w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k.jpg 2048w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": ""
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 2048,
-      "height": 1365,
-      "file": "2020\/10\/8076759765_1cd1fdaf63_k.jpg",
-      "sizes": {
-        "medium": {
-          "file": "8076759765_1cd1fdaf63_k-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-864x576.jpg"
-        },
-        "large": {
-          "file": "8076759765_1cd1fdaf63_k-864x576.jpg",
-          "width": 864,
-          "height": 576,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-864x576.jpg"
-        },
-        "thumbnail": {
-          "file": "8076759765_1cd1fdaf63_k-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "8076759765_1cd1fdaf63_k-768x512.jpg",
-          "width": 768,
-          "height": 512,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-768x512.jpg"
-        },
-        "1536x1536": {
-          "file": "8076759765_1cd1fdaf63_k-1536x1024.jpg",
-          "width": 1536,
-          "height": 1024,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1536x1024.jpg"
-        },
-        "admin-thumb": {
-          "file": "8076759765_1cd1fdaf63_k-150x100.jpg",
-          "width": 150,
-          "height": 100,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-150x100.jpg"
-        },
-        "opengraph": {
-          "file": "8076759765_1cd1fdaf63_k-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "8076759765_1cd1fdaf63_k-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-460x197.jpg"
-        },
-        "col4": {
-          "file": "8076759765_1cd1fdaf63_k-204x136.jpg",
-          "width": 204,
-          "height": 136,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-204x136.jpg"
-        },
-        "col4-square": {
-          "file": "8076759765_1cd1fdaf63_k-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "8076759765_1cd1fdaf63_k-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-424x238.jpg"
-        },
-        "col12": {
-          "file": "8076759765_1cd1fdaf63_k-664x443.jpg",
-          "width": 664,
-          "height": 443,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-664x443.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "8076759765_1cd1fdaf63_k-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "8076759765_1cd1fdaf63_k-560x373.jpg",
-          "width": 560,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-560x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "8076759765_1cd1fdaf63_k-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "8076759765_1cd1fdaf63_k-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1304x400.jpg"
-        },
-        "gallery": {
-          "file": "8076759765_1cd1fdaf63_k-1100x733.jpg",
-          "width": 1100,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1100x733.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "8076759765_1cd1fdaf63_k-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k-1304x550.jpg"
-        },
-        "full": {
-          "file": "8076759765_1cd1fdaf63_k.jpg",
-          "width": 2048,
-          "height": 1365,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "",
-        "camera": "",
-        "caption": "",
-        "created_timestamp": "0",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "",
-        "orientation": "0"
+    ],
+    "about": [
+      {
+        "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
       }
-    },
-    "post": 26380,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_1cd1fdaf63_k.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26490"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/13"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26490"
-        }
-      ]
-    }
-  },
-  {
-    "id": 26489,
-    "date": "2020-10-18T09:19:45",
-    "date_gmt": "2020-10-18T08:19:45",
-    "guid": {
-      "rendered": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c.jpg"
-    },
-    "modified": "2020-10-18T09:19:45",
-    "modified_gmt": "2020-10-18T08:19:45",
-    "slug": "8076759765_76f8130ccc_c",
-    "status": "inherit",
-    "type": "attachment",
-    "link": "https:\/\/novaramedia.com\/2020\/10\/20\/welcome-to-strike-school-the-programme-teaching-global-workers-to-fight-back\/8076759765_76f8130ccc_c\/",
-    "title": {
-      "rendered": "8076759765_76f8130ccc_c"
-    },
-    "author": 13,
-    "comment_status": "closed",
-    "ping_status": "closed",
-    "template": "",
-    "meta": [],
-    "smush": {
-      "stats": {
-        "percent": 6.709353843007773,
-        "bytes": 101053,
-        "size_before": 1506151,
-        "size_after": 1405098,
-        "time": 0.66000000000000014,
-        "api_version": "1.0",
-        "lossy": false,
-        "keep_exif": 0
-      },
-      "sizes": {
-        "thumbnail": {
-          "percent": 26.539999999999999,
-          "bytes": 3527,
-          "size_before": 13290,
-          "size_after": 9763,
-          "time": 0.01
-        },
-        "medium_large": {
-          "percent": 5.6799999999999997,
-          "bytes": 6411,
-          "size_before": 112884,
-          "size_after": 106473,
-          "time": 0.029999999999999999
-        },
-        "admin-thumb": {
-          "percent": 32.850000000000001,
-          "bytes": 3369,
-          "size_before": 10257,
-          "size_after": 6888,
-          "time": 0.02
-        },
-        "opengraph": {
-          "percent": 3.7799999999999998,
-          "bytes": 7055,
-          "size_before": 186774,
-          "size_after": 179719,
-          "time": 0.050000000000000003
-        },
-        "mobile-16to9": {
-          "percent": 10.32,
-          "bytes": 4607,
-          "size_before": 44632,
-          "size_after": 40025,
-          "time": 0.040000000000000001
-        },
-        "mobile-21to9": {
-          "percent": 11.76,
-          "bytes": 4296,
-          "size_before": 36526,
-          "size_after": 32230,
-          "time": 0.040000000000000001
-        },
-        "col4": {
-          "percent": 24.079999999999998,
-          "bytes": 3546,
-          "size_before": 14725,
-          "size_after": 11179,
-          "time": 0.02
-        },
-        "col4-square": {
-          "percent": 18.850000000000001,
-          "bytes": 3802,
-          "size_before": 20165,
-          "size_after": 16363,
-          "time": 0.01
-        },
-        "col4-16to9": {
-          "percent": 25.780000000000001,
-          "bytes": 3544,
-          "size_before": 13745,
-          "size_after": 10201,
-          "time": 0.01
-        },
-        "col6-16to9": {
-          "percent": 16.100000000000001,
-          "bytes": 3959,
-          "size_before": 24592,
-          "size_after": 20633,
-          "time": 0.01
-        },
-        "col6-1to4": {
-          "percent": 24.989999999999998,
-          "bytes": 3569,
-          "size_before": 14283,
-          "size_after": 10714,
-          "time": 0.01
-        },
-        "col8-16to9": {
-          "percent": 11.52,
-          "bytes": 4491,
-          "size_before": 38976,
-          "size_after": 34485,
-          "time": 0.01
-        },
-        "col12": {
-          "percent": 6.4400000000000004,
-          "bytes": 5731,
-          "size_before": 88939,
-          "size_after": 83208,
-          "time": 0.050000000000000003
-        },
-        "col12-1to2point3": {
-          "percent": 7.9900000000000002,
-          "bytes": 5290,
-          "size_before": 66198,
-          "size_after": 60908,
-          "time": 0.02
-        },
-        "col12-16to9": {
-          "percent": 7.04,
-          "bytes": 5690,
-          "size_before": 80786,
-          "size_after": 75096,
-          "time": 0.02
-        },
-        "gallery-mid": {
-          "percent": 7.9100000000000001,
-          "bytes": 5306,
-          "size_before": 67062,
-          "size_after": 61756,
-          "time": 0.02
-        },
-        "col18-16to9": {
-          "percent": 4.5700000000000003,
-          "bytes": 6670,
-          "size_before": 145825,
-          "size_after": 139155,
-          "time": 0.050000000000000003
-        },
-        "col24-16to9": {
-          "percent": 3.4500000000000002,
-          "bytes": 7554,
-          "size_before": 219252,
-          "size_after": 211698,
-          "time": 0.13
-        },
-        "col24-widescreen-crop": {
-          "percent": 4.4699999999999998,
-          "bytes": 5942,
-          "size_before": 133075,
-          "size_after": 127133,
-          "time": 0.040000000000000001
-        },
-        "col24-featured-crop": {
-          "percent": 3.8399999999999999,
-          "bytes": 6694,
-          "size_before": 174165,
-          "size_after": 167471,
-          "time": 0.070000000000000007
-        }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/9"
       }
-    },
-    "description": {
-      "rendered": "<p class=\"attachment\"><a href='https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c.jpg'><img width=\"799\" height=\"533\" src=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAQAAABTNcdGAAAAC0lEQVR42mNkgAIAABIAAmXG3J8AAAAASUVORK5CYII=\" class=\"attachment-medium size-medium lazyload\" alt=\"\" sizes=\"(max-width: 799px) 100vw, 799px\" data-srcset=\"https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c.jpg 799w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-768x512.jpg 768w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-150x100.jpg 150w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-204x136.jpg 204w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-664x443.jpg 664w, https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-559x373.jpg 559w\" \/><\/a><\/p>\n"
-    },
-    "caption": {
-      "rendered": ""
-    },
-    "alt_text": "",
-    "media_type": "image",
-    "mime_type": "image\/jpeg",
-    "media_details": {
-      "width": 799,
-      "height": 533,
-      "file": "2020\/10\/8076759765_76f8130ccc_c.jpg",
-      "sizes": {
-        "thumbnail": {
-          "file": "8076759765_76f8130ccc_c-150x150.jpg",
-          "width": 150,
-          "height": 150,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-150x150.jpg"
-        },
-        "medium_large": {
-          "file": "8076759765_76f8130ccc_c-768x512.jpg",
-          "width": 768,
-          "height": 512,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-768x512.jpg"
-        },
-        "admin-thumb": {
-          "file": "8076759765_76f8130ccc_c-150x100.jpg",
-          "width": 150,
-          "height": 100,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-150x100.jpg"
-        },
-        "opengraph": {
-          "file": "8076759765_76f8130ccc_c-1200x630.jpg",
-          "width": 1200,
-          "height": 630,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-1200x630.jpg"
-        },
-        "mobile-16to9": {
-          "file": "8076759765_76f8130ccc_c-460x259.jpg",
-          "width": 460,
-          "height": 259,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-460x259.jpg"
-        },
-        "mobile-21to9": {
-          "file": "8076759765_76f8130ccc_c-460x197.jpg",
-          "width": 460,
-          "height": 197,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-460x197.jpg"
-        },
-        "col4": {
-          "file": "8076759765_76f8130ccc_c-204x136.jpg",
-          "width": 204,
-          "height": 136,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-204x136.jpg"
-        },
-        "col4-square": {
-          "file": "8076759765_76f8130ccc_c-204x204.jpg",
-          "width": 204,
-          "height": 204,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-204x204.jpg"
-        },
-        "col4-16to9": {
-          "file": "8076759765_76f8130ccc_c-204x114.jpg",
-          "width": 204,
-          "height": 114,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-204x114.jpg"
-        },
-        "col6-16to9": {
-          "file": "8076759765_76f8130ccc_c-314x176.jpg",
-          "width": 314,
-          "height": 176,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-314x176.jpg"
-        },
-        "col6-1to4": {
-          "file": "8076759765_76f8130ccc_c-314x78.jpg",
-          "width": 314,
-          "height": 78,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-314x78.jpg"
-        },
-        "col8-16to9": {
-          "file": "8076759765_76f8130ccc_c-424x238.jpg",
-          "width": 424,
-          "height": 238,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-424x238.jpg"
-        },
-        "col12": {
-          "file": "8076759765_76f8130ccc_c-664x443.jpg",
-          "width": 664,
-          "height": 443,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-664x443.jpg"
-        },
-        "col12-1to2point3": {
-          "file": "8076759765_76f8130ccc_c-664x288.jpg",
-          "width": 664,
-          "height": 288,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-664x288.jpg"
-        },
-        "col12-16to9": {
-          "file": "8076759765_76f8130ccc_c-664x373.jpg",
-          "width": 664,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-664x373.jpg"
-        },
-        "gallery-mid": {
-          "file": "8076759765_76f8130ccc_c-559x373.jpg",
-          "width": 559,
-          "height": 373,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-559x373.jpg"
-        },
-        "col18-16to9": {
-          "file": "8076759765_76f8130ccc_c-974x548.jpg",
-          "width": 974,
-          "height": 548,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-974x548.jpg"
-        },
-        "col24-16to9": {
-          "file": "8076759765_76f8130ccc_c-1304x733.jpg",
-          "width": 1304,
-          "height": 733,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-1304x733.jpg"
-        },
-        "col24-widescreen-crop": {
-          "file": "8076759765_76f8130ccc_c-1304x400.jpg",
-          "width": 1304,
-          "height": 400,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-1304x400.jpg"
-        },
-        "col24-featured-crop": {
-          "file": "8076759765_76f8130ccc_c-1304x550.jpg",
-          "width": 1304,
-          "height": 550,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c-1304x550.jpg"
-        },
-        "full": {
-          "file": "8076759765_76f8130ccc_c.jpg",
-          "width": 799,
-          "height": 533,
-          "mime_type": "image\/jpeg",
-          "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c.jpg"
-        }
-      },
-      "image_meta": {
-        "aperture": "0",
-        "credit": "",
-        "camera": "",
-        "caption": "",
-        "created_timestamp": "0",
-        "copyright": "",
-        "focal_length": "0",
-        "iso": "0",
-        "shutter_speed": "0",
-        "title": "",
-        "orientation": "0"
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26510"
       }
-    },
-    "post": 26380,
-    "source_url": "https:\/\/novaramedia.com\/wp-content\/uploads\/2020\/10\/8076759765_76f8130ccc_c.jpg",
-    "_links": {
-      "self": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media\/26489"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/media"
-        }
-      ],
-      "about": [
-        {
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/types\/attachment"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/users\/13"
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https:\/\/novaramedia.com\/wp-json\/wp\/v2\/comments?post=26489"
-        }
-      ]
-    }
+    ]
   }
-]
+}
