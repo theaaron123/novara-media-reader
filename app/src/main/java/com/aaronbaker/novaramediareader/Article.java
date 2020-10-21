@@ -5,7 +5,7 @@ public class Article {
     private final String titles;
     private final String description;
     private final String permalink;
-    private final String imagelink;
+    private String imagelink;
 
     public Article(String name, String date, String permalink, String imagelink) {
         this.titles = name;
@@ -28,5 +28,9 @@ public class Article {
 
     public String getImagelink() {
         return imagelink;
+    }
+
+    public void setImagelink(String imagelink) {
+        this.imagelink = imagelink;
     }
 }

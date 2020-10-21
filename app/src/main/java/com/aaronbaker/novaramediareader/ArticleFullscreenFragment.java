@@ -163,7 +163,7 @@ public class ArticleFullscreenFragment extends Fragment {
     public void populateUI(Bundle b) {
         if (b != null) {
             Glide.with(this).load(b.getString(ArticleListFragment.IMAGE))
-                    .placeholder(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_nm_logo)
                     .dontAnimate()
                     .into(mImageView);
             mTitleView.setText(b.getString(ArticleListFragment.TITLE));
@@ -220,7 +220,11 @@ public class ArticleFullscreenFragment extends Fragment {
                         Log.d("On response", "article id: " + permalink);
                         Document document = Jsoup.parse(response);
                         Element mainBody = document.body();
-                        mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("single-articles-copy").html()), "text/html", "UTF-8", permalink);
+                        if (mainBody.getElementById("single-articles-copy") != null) {
+                            mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("single-articles-copy").html()), "text/html", "UTF-8", permalink);
+                        } else {
+                            mArticleBody.loadUrl(permalink);
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -234,7 +238,9 @@ public class ArticleFullscreenFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        if (menu.size() == 0) {
+            getActivity().getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        }
         MenuItem item = menu.findItem(R.id.action_font);
         item.setChecked(mLargeText);
     }

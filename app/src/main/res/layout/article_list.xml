@@ -2,28 +2,29 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ArticleListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArticleListFragment"
-    android:id="@+id/ArticleListFragment"
+    android:background="@color/ic_launcher_nm_background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     app:layout_constraintTop_toBottomOf="@+id/toolbar"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    tools:context=".ArticleListFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/article_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/card_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"
-                app:layout_anchor="@+id/include"
-                app:layout_anchorGravity="center"
-                tools:listitem="@layout/list_item" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layout_anchor="@+id/include"
+            app:layout_anchorGravity="center"
+            tools:listitem="@layout/list_item" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

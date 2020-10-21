@@ -12,20 +12,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class ArticleJsonParser {
-    static List<Article> addItemsFromJSON(InputStream inputStream) {
+    static List<Article> addItemsFromJSONArticle(InputStream inputStream) {
         String jsonDataString = null;
         try {
             jsonDataString = readJSONDataFromFile(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return addItemsFromJSON(jsonDataString);
+        return addItemsFromJSONArticle(jsonDataString);
     }
 
-    static List<Article> addItemsFromJSON(String jsonDataString) {
+    static List<Article> addItemsFromJSONArticle(String jsonDataString) {
         try {
             JSONObject jsonObject = new JSONObject(jsonDataString);
             JSONArray jsonArray = jsonObject.getJSONArray("posts");
@@ -37,9 +38,9 @@ public class ArticleJsonParser {
                 String name = itemObj.getString("title");
                 String shortDesc = itemObj.getString("short_desc");
                 String permalink = itemObj.getString("permalink");
-                String imagelink = itemObj.getString("thumb_medium");
+                String imageLink = itemObj.getString("thumb_medium");
 
-                articleList.add(new Article(name, Html.fromHtml(shortDesc).toString().replaceAll("\n", "").trim(), permalink, imagelink));
+                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imageLink));
             }
             return articleList;
         } catch (JSONException e) {
@@ -48,21 +49,56 @@ public class ArticleJsonParser {
         return null;
     }
 
-    private static String readJSONDataFromFile(InputStream inputStream) throws IOException {
-        StringBuilder builder = new StringBuilder();
-
+    static List<Article> addItemsFromJSONSearch(String searchResponse) {
+        List<Article> articleList = new ArrayList<>();
         try {
-            String jsonString;
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+            JSONArray jsonArray = new JSONArray(searchResponse);
 
-            while ((jsonString = bufferedReader.readLine()) != null) {
-                builder.append(jsonString);
+            for (int i = 0; i < jsonArray.length(); ++i) {
+                JSONObject itemObj = jsonArray.getJSONObject(i);
+
+                String name = itemObj.getJSONObject("title").getString("rendered");
+                String shortDesc = itemObj.getJSONObject("excerpt").getString("rendered");
+                String permalink = itemObj.getString("link");
+                String imageLink = itemObj.getString("featured_media");
+
+                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink));
             }
-        } finally {
+            return articleList;
+        } catch (JSONException e) {
+            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSONSearch: ", e);
+        }
+        return articleList;
+    }
+
+    static String parseImageUrlFromJSON(String mediaJSON) {
+        try {
+            return new JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url");
+        } catch (JSONException e) {
+            Log.d(ArticleListFragment.class.getName(), "parseImageUrlFromJSON: ", e);
+        }
+        return "";
+    }
+
+     static String readJSONDataFromFile(InputStream inputStream) throws IOException {
+         StringBuilder builder = new StringBuilder();
+
+         try {
+             String jsonString;
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+
+             while ((jsonString = bufferedReader.readLine()) != null) {
+                 builder.append(jsonString);
+             }
+         } finally {
             if (inputStream != null) {
                 inputStream.close();
             }
         }
         return new String(builder);
+    }
+
+    private static String stripHTML(String html) {
+        return Html.fromHtml(html).toString().replaceAll("\n", "").trim();
     }
 }

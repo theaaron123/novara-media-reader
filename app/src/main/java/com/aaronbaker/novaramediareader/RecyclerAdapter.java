@@ -9,8 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +19,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private static final int TYPE = 1;
     private final Context context;
-    private final List<Object> listRecyclerItem;
+    private List<Article> listRecyclerItem;
     private final OnItemClickListener listener;
     private int offlinePositions = -1;
 
@@ -29,7 +27,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         void onItemClick(Article article);
     }
 
-    public RecyclerAdapter(Context context, List<Object> listRecyclerItem, OnItemClickListener listener) {
+    public RecyclerAdapter(Context context, List<Article> listRecyclerItem, OnItemClickListener listener) {
         this.context = context;
         this.listRecyclerItem = listRecyclerItem;
         this.listener = listener;
@@ -107,7 +105,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         });
         Glide.with(itemViewHolder.itemView.getContext()).load(article.getImagelink())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_nm_logo)
+                .fitCenter()
                 .dontAnimate()
                 .into(itemViewHolder.imageView);
     }
@@ -121,5 +120,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public long getItemId(int position) {
         Article product = (Article) listRecyclerItem.get(position);
         return product.hashCode();
+    }
+
+    public void setListRecyclerItem(List<Article> listRecyclerItem) {
+        this.listRecyclerItem = listRecyclerItem;
+        notifyDataSetChanged();
     }
 }
