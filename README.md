@@ -1,7 +1,7 @@
 # novara-media-reader
 Android application that provides a native experience for reading articles from Novara Media 
 
-Available on tyhe play store [here](https://play.google.com/store/apps/details?id=com.aaron.novaramediareader)
+Available on the play store [here](https://play.google.com/store/apps/details?id=com.aaron.novaramediareader)
 
 [![Build Status](https://travis-ci.org/theaaron123/novara-media-reader.svg?branch=master)](https://travis-ci.org/theaaron123/novara-media-reader)
 
