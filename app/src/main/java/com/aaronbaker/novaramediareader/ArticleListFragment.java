@@ -210,15 +210,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     public void loadPersistedArticles() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                AppDatabase databaseInstance = AppDatabase.getDatabaseInstance(getContext());
-                List<Article> articles = databaseInstance.userDao().getAll();
-                mAdapter.setOfflinePositions(articles.size() - 1);
-                viewItems.addAll(articles);
-            }
-        });
+        new OfflineArticlesAsyncTask(getContext(), mAdapter).execute();
         mAdapter.notifyDataSetChanged();
     }
 

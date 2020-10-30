@@ -140,8 +140,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return product.hashCode();
     }
 
-    public void setListRecyclerItem(List<Article> listRecyclerItem) {
-        this.listRecyclerItem = listRecyclerItem;
+    public void addListRecyclerItems(List<Article> listRecyclerItems) {
+        this.listRecyclerItem.addAll(listRecyclerItems);
         notifyDataSetChanged();
     }
 
