@@ -1,5 +1,6 @@
 package com.aaronbaker.novaramediareader;
 
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -112,6 +113,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 if (bundle != null && bundle.containsKey(QUERY)) {
                     retrieveSearch(bundle.getString(QUERY));
                 } else {
+                    loadPersistedArticles();
                     retrieveArticles(1);
                 }
                 mSwipeRefreshLayout.setRefreshing(false);
@@ -205,6 +207,19 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             }
         });
         queue.add(stringRequest);
+    }
+
+    public void loadPersistedArticles() {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase databaseInstance = AppDatabase.getDatabaseInstance(getContext());
+                List<Article> articles = databaseInstance.userDao().getAll();
+                mAdapter.setOfflinePositions(articles.size() - 1);
+                viewItems.addAll(articles);
+            }
+        });
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override

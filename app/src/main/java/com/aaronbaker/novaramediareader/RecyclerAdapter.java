@@ -144,4 +144,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.listRecyclerItem = listRecyclerItem;
         notifyDataSetChanged();
     }
+
+    public void setOfflinePositions(int offlinePositions) {
+        this.offlinePositions = offlinePositions;
+    }
 }
