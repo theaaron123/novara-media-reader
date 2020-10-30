@@ -1,6 +1,7 @@
 package com.aaronbaker.novaramediareader;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.bumptech.glide.Glide;
 
@@ -70,6 +72,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             .getChildAdapterPosition((View) v.getParent().getParent());
                     if (iPosition <= offlinePositions) {
                         if (iPosition <= listRecyclerItem.size() && iPosition >= 0) {
+                            final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+                            final String title = listRecyclerItem.get(iPosition).getTitle();
+                            AsyncTask.execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    db.userDao().deleteByTitle(title);
+                                }
+                            });
                             offlinePositions--;
                             listRecyclerItem.remove(iPosition);
                             notifyDataSetChanged();
@@ -77,6 +87,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         return;
                     }
                     listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
+                    final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+                    AsyncTask.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            listRecyclerItem.get(0).setUid(db.userDao().insertArticle(listRecyclerItem.get(0)));
+
+                        }
+                    });
                     offlinePositions++;
                     listRecyclerItem.remove(iPosition + 1);
                     notifyDataSetChanged();
@@ -104,7 +122,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 listener.onItemClick(article);
             }
         });
-        Glide.with(itemViewHolder.itemView.getContext()).load(article.getImagelink())
+        Glide.with(itemViewHolder.itemView.getContext()).load(article.getImage())
                 .placeholder(R.drawable.ic_nm_logo)
                 .fitCenter()
                 .dontAnimate()

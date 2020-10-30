@@ -1,6 +1,5 @@
 package com.aaronbaker.novaramediareader;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,14 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -169,14 +166,14 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     private StringRequest getSearchedArticleImageUrl(final Article article) {
-        String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImagelink();
+        String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImage();
         return new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onResponse(String response) {
                         String imageUrlFromJSON = ArticleJsonParser.parseImageUrlFromJSON(response);
-                        article.setImagelink(imageUrlFromJSON);
+                        article.setImage(imageUrlFromJSON);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -246,7 +243,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         bundle.putString(DESCRIPTION, article.getDescription());
         bundle.putString(TITLE, article.getTitle());
         bundle.putString(PERMALINK, article.getPermalink());
-        bundle.putString(IMAGE, article.getImagelink());
+        bundle.putString(IMAGE, article.getImage());
 
         FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
         ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
