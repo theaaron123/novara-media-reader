@@ -1,6 +1,5 @@
 package com.aaronbaker.novaramediareader;
 
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -218,6 +217,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
         viewItems.clear();
+        loadPersistedArticles();
         retrieveArticles(0);
         pageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
