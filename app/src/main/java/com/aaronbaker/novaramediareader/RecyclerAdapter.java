@@ -2,18 +2,32 @@ package com.aaronbaker.novaramediareader;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.util.List;
 
@@ -87,14 +101,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         return;
                     }
                     listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
-                    final AppDatabase db = AppDatabase.getDatabaseInstance(context);
-                    AsyncTask.execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            listRecyclerItem.get(0).setUid(db.userDao().insertArticle(listRecyclerItem.get(0)));
-
-                        }
-                    });
+                    persistArticle(listRecyclerItem.get(0));
                     offlinePositions++;
                     listRecyclerItem.remove(iPosition + 1);
                     notifyDataSetChanged();
@@ -107,6 +114,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             offlineButton.setBackgroundResource((R.drawable.ic_baseline_offline_pin_24));
         }
         bind(viewHolder, listener, position);
+    }
+
+    private void persistArticle(final Article article) {
+        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        article.setBody(response);
+                        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+                        AsyncTask.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                article.setUid(db.userDao().insertArticle(article));
+                            }
+                        });
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("RecyclerAdapter", "Could not persist article" + article.getTitle());
+            }
+        });
+        queue.add(stringRequest);
     }
 
     public void bind(final RecyclerView.ViewHolder viewHolder, final OnItemClickListener listener, int position) {

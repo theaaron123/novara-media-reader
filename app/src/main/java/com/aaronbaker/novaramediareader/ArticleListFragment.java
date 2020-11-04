@@ -39,6 +39,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     public static final String PERMALINK = "Permalink";
     public static final String IMAGE = "Image";
     private static final String QUERY = "QUERY";
+    public static final String BODY = "BODY";
     private RecyclerView mRecyclerView;
     private List<Article> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -251,6 +252,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         bundle.putString(TITLE, article.getTitle());
         bundle.putString(PERMALINK, article.getPermalink());
         bundle.putString(IMAGE, article.getImage());
+        bundle.putString(BODY, article.getBody());
 
         FragmentTransaction tx = getActivity().getSupportFragmentManager().beginTransaction();
         ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();

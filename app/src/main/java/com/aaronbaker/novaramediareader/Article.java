@@ -17,6 +17,8 @@ public class Article {
     private String permalink;
     @ColumnInfo(name = "image")
     private String image;
+    @ColumnInfo(name = "body")
+    private String body;
 
     public Article(String name, String date, String permalink, String image) {
         this.title = name;
@@ -62,5 +64,13 @@ public class Article {
 
     public void setUid(long uid) {
         this.uid = uid;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 }

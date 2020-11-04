@@ -42,7 +42,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-
 public class ArticleFullscreenFragment extends Fragment {
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -167,9 +166,12 @@ public class ArticleFullscreenFragment extends Fragment {
                     .dontAnimate()
                     .into(mImageView);
             mTitleView.setText(b.getString(ArticleListFragment.TITLE));
-            retrieveArticle(b.getString(ArticleListFragment.PERMALINK));
+            if (b.getString(ArticleListFragment.BODY) == null) {
+                retrieveArticleFromWeb(b.getString(ArticleListFragment.PERMALINK));
+            } else {
+                retrieveArticleFromBody(b.getString(ArticleListFragment.BODY));
+            }
         }
-
         if (mLargeText) {
             mArticleBody.getSettings().setTextZoom(145);
         }
@@ -209,7 +211,7 @@ public class ArticleFullscreenFragment extends Fragment {
         mContentView = null;
     }
 
-    public void retrieveArticle(final String permalink) {
+    public void retrieveArticleFromWeb(final String permalink) {
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, permalink,
@@ -229,10 +231,20 @@ public class ArticleFullscreenFragment extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(stringRequest);
+    }
+
+    public void retrieveArticleFromBody(final String body) {
+        Document document = Jsoup.parse(body);
+        Element mainBody = document.body();
+        if (mainBody.getElementById("single-articles-copy") != null) {
+            mArticleBody.loadDataWithBaseURL(null, mainBody.getElementById("single-articles-copy").html(), "text/html", "UTF-8", null);
+        } else {
+            mArticleBody.loadDataWithBaseURL(null, body, "text/html", "UTF-8", null);
+        }
     }
 
     @Override
