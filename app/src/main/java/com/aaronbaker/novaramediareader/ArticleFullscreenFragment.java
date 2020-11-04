@@ -169,7 +169,7 @@ public class ArticleFullscreenFragment extends Fragment {
             if (b.getString(ArticleListFragment.BODY) == null) {
                 retrieveArticleFromWeb(b.getString(ArticleListFragment.PERMALINK));
             } else {
-                retrieveArticleFromBody(b.getString(ArticleListFragment.BODY));
+                retrieveArticleFromBody(b.getString(ArticleListFragment.BODY), b.getString(ArticleListFragment.PERMALINK));
             }
         }
         if (mLargeText) {
@@ -237,13 +237,13 @@ public class ArticleFullscreenFragment extends Fragment {
         queue.add(stringRequest);
     }
 
-    public void retrieveArticleFromBody(final String body) {
+    public void retrieveArticleFromBody(final String body, String permalink) {
         Document document = Jsoup.parse(body);
         Element mainBody = document.body();
         if (mainBody.getElementById("single-articles-copy") != null) {
-            mArticleBody.loadDataWithBaseURL(null, mainBody.getElementById("single-articles-copy").html(), "text/html", "UTF-8", null);
+            mArticleBody.loadDataWithBaseURL(permalink, mainBody.getElementById("single-articles-copy").html(), "text/html", "UTF-8", permalink);
         } else {
-            mArticleBody.loadDataWithBaseURL(null, body, "text/html", "UTF-8", null);
+            mArticleBody.loadDataWithBaseURL(permalink, body, "text/html", "UTF-8", permalink);
         }
     }
 
