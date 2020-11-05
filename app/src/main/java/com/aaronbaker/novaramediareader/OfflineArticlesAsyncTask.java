@@ -19,7 +19,7 @@ class OfflineArticlesAsyncTask extends AsyncTask<Object, Object, List<Article>> 
     @Override
     protected List<Article> doInBackground(Object... objects) {
         AppDatabase databaseInstance = AppDatabase.getDatabaseInstance(activityReference.get());
-        List<Article> articles = databaseInstance.userDao().getAll();
+        List<Article> articles = databaseInstance.articleDao().getAll();
         adapter.setOfflinePositions(articles.size() - 1);
         return articles;
     }

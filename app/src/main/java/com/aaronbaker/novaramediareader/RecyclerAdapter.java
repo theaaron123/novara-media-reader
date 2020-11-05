@@ -10,12 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,10 +22,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 import java.util.List;
 
@@ -91,7 +85,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             AsyncTask.execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    db.userDao().deleteByTitle(title);
+                                    db.articleDao().deleteByTitle(title);
                                 }
                             });
                             offlinePositions--;
@@ -128,7 +122,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         AsyncTask.execute(new Runnable() {
                             @Override
                             public void run() {
-                                article.setUid(db.userDao().insertArticle(article));
+                                article.setUid(db.articleDao().insertArticle(article));
                             }
                         });
                     }
