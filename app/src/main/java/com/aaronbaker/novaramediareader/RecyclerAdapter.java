@@ -1,6 +1,9 @@
 package com.aaronbaker.novaramediareader;
 
 import android.content.Context;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -51,7 +61,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         switch (i) {
             case TYPE:
-
             default:
                 View layoutView = LayoutInflater.from(viewGroup.getContext()).inflate(
                         R.layout.list_item, viewGroup, false);
@@ -70,6 +79,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             .getChildAdapterPosition((View) v.getParent().getParent());
                     if (iPosition <= offlinePositions) {
                         if (iPosition <= listRecyclerItem.size() && iPosition >= 0) {
+                            deleteArticle(listRecyclerItem.get(iPosition).getTitle());
                             offlinePositions--;
                             listRecyclerItem.remove(iPosition);
                             notifyDataSetChanged();
@@ -77,6 +87,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         return;
                     }
                     listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
+                    persistArticle(listRecyclerItem.get(0));
                     offlinePositions++;
                     listRecyclerItem.remove(iPosition + 1);
                     notifyDataSetChanged();
@@ -89,6 +100,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             offlineButton.setBackgroundResource((R.drawable.ic_baseline_offline_pin_24));
         }
         bind(viewHolder, listener, position);
+    }
+
+    private void deleteArticle(final String title) {
+        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.articleDao().deleteByTitle(title);
+            }
+        });
+    }
+
+    private void persistArticle(final Article article) {
+        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        article.setBody(response);
+                        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+                        AsyncTask.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                article.setUid(db.articleDao().insertArticle(article));
+                            }
+                        });
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("RecyclerAdapter", "Could not persist article" + article.getTitle());
+            }
+        });
+        queue.add(stringRequest);
     }
 
     public void bind(final RecyclerView.ViewHolder viewHolder, final OnItemClickListener listener, int position) {
@@ -104,7 +150,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 listener.onItemClick(article);
             }
         });
-        Glide.with(itemViewHolder.itemView.getContext()).load(article.getImagelink())
+        Glide.with(itemViewHolder.itemView.getContext()).load(article.getImage())
                 .placeholder(R.drawable.ic_nm_logo)
                 .fitCenter()
                 .dontAnimate()
@@ -122,8 +168,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return product.hashCode();
     }
 
-    public void setListRecyclerItem(List<Article> listRecyclerItem) {
-        this.listRecyclerItem = listRecyclerItem;
+    public void addListRecyclerItems(List<Article> listRecyclerItems) {
+        this.listRecyclerItem.addAll(listRecyclerItems);
         notifyDataSetChanged();
+    }
+
+    public void setOfflinePositions(int offlinePositions) {
+        this.offlinePositions = offlinePositions;
     }
 }
