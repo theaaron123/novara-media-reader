@@ -61,7 +61,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         switch (i) {
             case TYPE:
-
             default:
                 View layoutView = LayoutInflater.from(viewGroup.getContext()).inflate(
                         R.layout.list_item, viewGroup, false);
@@ -80,14 +79,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             .getChildAdapterPosition((View) v.getParent().getParent());
                     if (iPosition <= offlinePositions) {
                         if (iPosition <= listRecyclerItem.size() && iPosition >= 0) {
-                            final AppDatabase db = AppDatabase.getDatabaseInstance(context);
-                            final String title = listRecyclerItem.get(iPosition).getTitle();
-                            AsyncTask.execute(new Runnable() {
-                                @Override
-                                public void run() {
-                                    db.articleDao().deleteByTitle(title);
-                                }
-                            });
+                            deleteArticle(listRecyclerItem.get(iPosition).getTitle());
                             offlinePositions--;
                             listRecyclerItem.remove(iPosition);
                             notifyDataSetChanged();
@@ -108,6 +100,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             offlineButton.setBackgroundResource((R.drawable.ic_baseline_offline_pin_24));
         }
         bind(viewHolder, listener, position);
+    }
+
+    private void deleteArticle(final String title) {
+        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.articleDao().deleteByTitle(title);
+            }
+        });
     }
 
     private void persistArticle(final Article article) {
