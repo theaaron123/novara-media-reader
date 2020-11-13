@@ -19,8 +19,19 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/novaramediaopengraph"
-            app:popupTheme="@style/AppTheme.AppBarOverlay" />
+            android:background="@drawable/marble_dark_banner"
+            app:popupTheme="@style/AppTheme.AppBarOverlay">
+
+            <ImageView
+                android:id="@+id/list_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_nm_logomark_white" />
+        </androidx.appcompat.widget.Toolbar>
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
