@@ -1,76 +1,17 @@
-package com.aaronbaker.novaramediareader;
+package com.aaronbaker.novaramediareader
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity
-public class Article {
-
+data class Article(
+        @ColumnInfo(name = "title") var title: String? = null,
+        @ColumnInfo(name = "description") var description: String? = null,
+        @ColumnInfo(name = "permalink") var permalink: String? = null,
+        @ColumnInfo(name = "image") var image: String? = null,
+        @ColumnInfo(name = "body") var body: String? = null,
+) {
     @PrimaryKey(autoGenerate = true)
-    public long uid;
-    @ColumnInfo(name = "title")
-    private String title;
-    @ColumnInfo(name = "description")
-    private String description;
-    @ColumnInfo(name = "permalink")
-    private String permalink;
-    @ColumnInfo(name = "image")
-    private String image;
-    @ColumnInfo(name = "body")
-    private String body;
-
-    public Article(String name, String date, String permalink, String image) {
-        this.title = name;
-        this.description = date;
-        this.permalink = permalink;
-        this.image = image;
-    }
-
-    public Article() {
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getPermalink() {
-        return permalink;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setPermalink(String permalink) {
-        this.permalink = permalink;
-    }
-
-    public void setUid(long uid) {
-        this.uid = uid;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
+    var uid: Long = 0
 }
