@@ -40,7 +40,7 @@ public class ArticleJsonParser {
                 String permalink = itemObj.getString("permalink");
                 String imageLink = itemObj.getString("thumb_medium");
 
-                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imageLink, ""));
+                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imageLink, null));
             }
             return articleList;
         } catch (JSONException e) {
@@ -62,7 +62,7 @@ public class ArticleJsonParser {
                 String permalink = itemObj.getString("link");
                 String imageLink = itemObj.getString("featured_media");
 
-                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, ""));
+                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, null));
             }
             return articleList;
         } catch (JSONException e) {
