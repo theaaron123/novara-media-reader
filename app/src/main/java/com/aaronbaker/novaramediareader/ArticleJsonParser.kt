@@ -1,104 +1,93 @@
-package com.aaronbaker.novaramediareader;
+package com.aaronbaker.novaramediareader
 
-import android.text.Html;
-import android.util.Log;
+import android.text.Html
+import android.util.Log
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.util.*
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-public class ArticleJsonParser {
-    static List<Article> addItemsFromJSONArticle(InputStream inputStream) {
-        String jsonDataString = null;
+object ArticleJsonParser {
+    fun addItemsFromJSONArticle(inputStream: InputStream?): List<Article>? {
+        var jsonDataString: String? = null
         try {
-            jsonDataString = readJSONDataFromFile(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
+            jsonDataString = readJSONDataFromFile(inputStream)
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
-        return addItemsFromJSONArticle(jsonDataString);
+        return addItemsFromJSONArticle(jsonDataString)
     }
 
-    static List<Article> addItemsFromJSONArticle(String jsonDataString) {
+    @JvmStatic
+    fun addItemsFromJSONArticle(jsonDataString: String?): List<Article>? {
         try {
-            JSONObject jsonObject = new JSONObject(jsonDataString);
-            JSONArray jsonArray = jsonObject.getJSONArray("posts");
-            List<Article> articleList = new ArrayList<>();
-
-            for (int i = 0; i < jsonArray.length(); ++i) {
-                JSONObject itemObj = jsonArray.getJSONObject(i);
-
-                String name = itemObj.getString("title");
-                String shortDesc = itemObj.getString("short_desc");
-                String permalink = itemObj.getString("permalink");
-                String imageLink = itemObj.getString("thumb_medium");
-
-                articleList.add(new Article(name, stripHTML(shortDesc), permalink, imageLink, null));
+            val jsonObject = JSONObject(jsonDataString)
+            val jsonArray = jsonObject.getJSONArray("posts")
+            val articleList: MutableList<Article> = ArrayList()
+            for (i in 0 until jsonArray.length()) {
+                val itemObj = jsonArray.getJSONObject(i)
+                val name = itemObj.getString("title")
+                val shortDesc = itemObj.getString("short_desc")
+                val permalink = itemObj.getString("permalink")
+                val imageLink = itemObj.getString("thumb_medium")
+                articleList.add(Article(name, stripHTML(shortDesc), permalink, imageLink, null))
             }
-            return articleList;
-        } catch (JSONException e) {
-            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSON: ", e);
+            return articleList
+        } catch (e: JSONException) {
+            Log.d(ArticleListFragment::class.java.name, "addItemsFromJSON: ", e)
         }
-        return null;
+        return null
     }
 
-    static List<Article> addItemsFromJSONSearch(String searchResponse) {
-        List<Article> articleList = new ArrayList<>();
+    @JvmStatic
+    fun addItemsFromJSONSearch(searchResponse: String?): List<Article> {
+        val articleList: MutableList<Article> = ArrayList()
         try {
-            JSONArray jsonArray = new JSONArray(searchResponse);
-
-            for (int i = 0; i < jsonArray.length(); ++i) {
-                JSONObject itemObj = jsonArray.getJSONObject(i);
-
-                String name = itemObj.getJSONObject("title").getString("rendered");
-                String shortDesc = itemObj.getJSONObject("excerpt").getString("rendered");
-                String permalink = itemObj.getString("link");
-                String imageLink = itemObj.getString("featured_media");
-
-                articleList.add(new Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, null));
+            val jsonArray = JSONArray(searchResponse)
+            for (i in 0 until jsonArray.length()) {
+                val itemObj = jsonArray.getJSONObject(i)
+                val name = itemObj.getJSONObject("title").getString("rendered")
+                val shortDesc = itemObj.getJSONObject("excerpt").getString("rendered")
+                val permalink = itemObj.getString("link")
+                val imageLink = itemObj.getString("featured_media")
+                articleList.add(Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, null))
             }
-            return articleList;
-        } catch (JSONException e) {
-            Log.d(ArticleListFragment.class.getName(), "addItemsFromJSONSearch: ", e);
+            return articleList
+        } catch (e: JSONException) {
+            Log.d(ArticleListFragment::class.java.name, "addItemsFromJSONSearch: ", e)
         }
-        return articleList;
+        return articleList
     }
 
-    static String parseImageUrlFromJSON(String mediaJSON) {
+    @JvmStatic
+    fun parseImageUrlFromJSON(mediaJSON: String?): String {
         try {
-            return new JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url");
-        } catch (JSONException e) {
-            Log.d(ArticleListFragment.class.getName(), "parseImageUrlFromJSON: ", e);
+            return JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url")
+        } catch (e: JSONException) {
+            Log.d(ArticleListFragment::class.java.name, "parseImageUrlFromJSON: ", e)
         }
-        return "";
+        return ""
     }
 
-     static String readJSONDataFromFile(InputStream inputStream) throws IOException {
-         StringBuilder builder = new StringBuilder();
-
-         try {
-             String jsonString;
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
-
-             while ((jsonString = bufferedReader.readLine()) != null) {
-                 builder.append(jsonString);
-             }
-         } finally {
-            if (inputStream != null) {
-                inputStream.close();
+    @JvmStatic
+    @Throws(IOException::class)
+    fun readJSONDataFromFile(inputStream: InputStream?): String {
+        val builder = StringBuilder()
+        inputStream.use { _ ->
+            var jsonString: String?
+            val bufferedReader = BufferedReader(InputStreamReader(inputStream, "UTF-8"))
+            while (bufferedReader.readLine().also { jsonString = it } != null) {
+                builder.append(jsonString)
             }
         }
-        return new String(builder);
+        return String(builder)
     }
 
-    private static String stripHTML(String html) {
-        return Html.fromHtml(html).toString().replaceAll("\n", "").trim();
+    private fun stripHTML(html: String): String {
+        return Html.fromHtml(html).toString().replace("\n".toRegex(), "").trim { it <= ' ' }
     }
 }
