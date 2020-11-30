@@ -5,10 +5,8 @@
     android:id="@+id/ArticleListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ic_launcher_nm_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    app:layout_constraintTop_toBottomOf="@+id/toolbar"
-    tools:context=".ArticleListFragment">
+    app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
