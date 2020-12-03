@@ -77,20 +77,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 if (v.getParent().getParent().getParent() instanceof RecyclerView) {
                     iPosition = ((RecyclerView) v.getParent().getParent().getParent())
                             .getChildAdapterPosition((View) v.getParent().getParent());
+                    // TODO: consider checking database for entry rather than using offlinePositions var to track
                     if (iPosition <= offlinePositions) {
                         if (iPosition <= listRecyclerItem.size() && iPosition >= 0) {
-                            deleteArticle(listRecyclerItem.get(iPosition).getTitle());
-                            offlinePositions--;
-                            listRecyclerItem.remove(iPosition);
-                            notifyDataSetChanged();
+                            removePersistedAt(iPosition);
                         }
                         return;
                     }
-                    listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
-                    persistArticle(listRecyclerItem.get(0));
-                    offlinePositions++;
-                    listRecyclerItem.remove(iPosition + 1);
-                    notifyDataSetChanged();
+                    addPersistAt(iPosition);
                 }
             }
         });
@@ -102,39 +96,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         bind(viewHolder, listener, position);
     }
 
-    private void deleteArticle(final String title) {
-        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+    public void addPersistAt(int iPosition) {
+        listRecyclerItem.add(0, listRecyclerItem.get(iPosition));
+        persistArticle(listRecyclerItem.get(0));
+        offlinePositions++;
+        listRecyclerItem.remove(iPosition + 1);
+        notifyDataSetChanged();
+    }
+
+    public void removePersistedAt(final int iPosition) {
+        final String title = listRecyclerItem.get(iPosition).getTitle();
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                db.articleDao().deleteByTitle(title);
+                if (AppDatabase.getDatabaseInstance(context).articleDao().findByTitle(title) != null) {
+                    deleteArticle(title);
+                    offlinePositions--;
+                }
             }
         });
-    }
-
-    private void persistArticle(final Article article) {
-        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
-                new Response.Listener<String>() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
-                    public void onResponse(String response) {
-                        article.setBody(response);
-                        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
-                        AsyncTask.execute(new Runnable() {
-                            @Override
-                            public void run() {
-                                article.setUid(db.articleDao().insertArticle(article));
-                            }
-                        });
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("RecyclerAdapter", "Could not persist article" + article.getTitle());
-            }
-        });
-        queue.add(stringRequest);
+        listRecyclerItem.remove(iPosition);
+        notifyItemRemoved(iPosition);
     }
 
     public void bind(final RecyclerView.ViewHolder viewHolder, final OnItemClickListener listener, int position) {
@@ -175,5 +157,40 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public void setOfflinePositions(int offlinePositions) {
         this.offlinePositions = offlinePositions;
+    }
+
+    private void deleteArticle(final String title) {
+        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.articleDao().deleteByTitle(title);
+            }
+        });
+    }
+
+    private void persistArticle(final Article article) {
+        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        article.setBody(response);
+                        final AppDatabase db = AppDatabase.getDatabaseInstance(context);
+                        AsyncTask.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                article.setUid(db.articleDao().insertArticle(article));
+                            }
+                        });
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("RecyclerAdapter", "Could not persist article" + article.getTitle());
+            }
+        });
+        queue.add(stringRequest);
     }
 }
