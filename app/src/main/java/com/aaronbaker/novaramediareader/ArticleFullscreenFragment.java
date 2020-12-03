@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -145,6 +148,12 @@ public class ArticleFullscreenFragment extends Fragment {
         mImageView = (ImageView) view.findViewById(R.id.article_image);
 
         mArticleBody.getSettings().setJavaScriptEnabled(true);
+
+        Configuration configuration = getResources().getConfiguration();
+        if ((configuration.uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+                && WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+            WebSettingsCompat.setForceDark(mArticleBody.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+        }
 
         mPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
         mLargeText = mPrefs.getBoolean(LARGE_TEXT_KEY, false);
