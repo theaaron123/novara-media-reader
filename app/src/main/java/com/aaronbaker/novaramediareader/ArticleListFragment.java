@@ -41,8 +41,9 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     public static final String TITLE = "Title";
     public static final String PERMALINK = "Permalink";
     public static final String IMAGE = "Image";
-    private static final String QUERY = "QUERY";
     public static final String BODY = "BODY";
+    public static final String NOVARAMEDIA_COM_ABOUT = "https://novaramedia.com/about/";
+    private static final String QUERY = "QUERY";
     private RecyclerView mRecyclerView;
     private List<Article> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -196,6 +197,18 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_contact:
+                Article about = new Article();
+                about.setPermalink(NOVARAMEDIA_COM_ABOUT);
+                transitionToArticle(about);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void transitionToArticle(Article article) {

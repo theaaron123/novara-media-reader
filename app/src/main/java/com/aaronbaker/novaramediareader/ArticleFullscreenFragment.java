@@ -45,6 +45,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import static com.aaronbaker.novaramediareader.ArticleListFragment.NOVARAMEDIA_COM_ABOUT;
+
 public class ArticleFullscreenFragment extends Fragment {
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -290,6 +292,8 @@ public class ArticleFullscreenFragment extends Fragment {
                         mLargeText = false;
                     }
                 }
+            case R.id.action_contact:
+                retrieveArticleFromWeb(NOVARAMEDIA_COM_ABOUT);
 
             default:
                 return super.onOptionsItemSelected(item);
