@@ -5,15 +5,19 @@
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always|collapseActionView"
+        android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        android:title="Search" />
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_contact"
+        android:title="@string/action_contact"
+        app:showAsAction="never" />
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/action_font"
+            android:checkable="true"
             android:icon="@drawable/ic_baseline_text_fields_24"
             android:title="@string/action_font"
-            android:checkable="true"
             app:actionViewClass="android.widget.CheckBox"
             app:showAsAction="never" />
     </group>

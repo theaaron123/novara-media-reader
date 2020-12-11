@@ -12,6 +12,7 @@ import java.io.InputStreamReader
 import java.util.*
 
 object ArticleJsonParser {
+    @JvmStatic
     fun addItemsFromJSONArticle(inputStream: InputStream?): List<Article>? {
         var jsonDataString: String? = null
         try {
