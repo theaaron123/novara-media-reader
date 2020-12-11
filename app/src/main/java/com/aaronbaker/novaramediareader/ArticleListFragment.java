@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -27,6 +28,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,6 +101,9 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             }
         });
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(getSimpleItemTouchCallback());
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
+
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.article_list_fragment);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
@@ -130,60 +136,6 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         final MenuItem item = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(this);
-    }
-
-    private void retrieveSearch(final String query) {
-        final RequestQueue queue = Volley.newRequestQueue(getActivity());
-        String url = HTTPS_NOVARAMEDIA_COM_API_SEARCH + query;
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
-                    public void onResponse(String response) {
-                        final List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
-
-                        for (Article article : articles) {
-                            StringRequest imageRequest = getSearchedArticleImageUrl(article);
-                            queue.add(imageRequest);
-                        }
-
-                        mSearchAdapter = new RecyclerAdapter(getActivity(), articles, new RecyclerAdapter.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(Article article) {
-                                transitionToArticle(article);
-                            }
-                        });
-                        mRecyclerView.swapAdapter(mSearchAdapter, true);
-                        Log.d("On response", "page number: " + query);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mSwipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT);
-            }
-        });
-        queue.add(stringRequest);
-    }
-
-    private StringRequest getSearchedArticleImageUrl(final Article article) {
-        String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImage();
-        return new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
-                    public void onResponse(String response) {
-                        String imageUrlFromJSON = ArticleJsonParser.parseImageUrlFromJSON(response);
-                        article.setImage(imageUrlFromJSON);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mSwipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void retrieveArticles(final int pageNumberToRetrieve) {
@@ -258,5 +210,75 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         ArticleFullscreenFragment articleFullscreenFragment = new ArticleFullscreenFragment();
         articleFullscreenFragment.setArguments(bundle);
         tx.add(R.id.fragment_container, articleFullscreenFragment).addToBackStack("articleFullScreen").commit();
+    }
+
+    private void retrieveSearch(final String query) {
+        final RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = HTTPS_NOVARAMEDIA_COM_API_SEARCH + query;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        final List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
+
+                        for (Article article : articles) {
+                            StringRequest imageRequest = getSearchedArticleImageUrl(article);
+                            queue.add(imageRequest);
+                        }
+
+                        mSearchAdapter = new RecyclerAdapter(getActivity(), articles, new RecyclerAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(Article article) {
+                                transitionToArticle(article);
+                            }
+                        });
+                        mRecyclerView.swapAdapter(mSearchAdapter, true);
+                        Log.d("On response", "page number: " + query);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mSwipeRefreshLayout.setRefreshing(false);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT);
+            }
+        });
+        queue.add(stringRequest);
+    }
+
+    private StringRequest getSearchedArticleImageUrl(final Article article) {
+        String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImage();
+        return new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onResponse(String response) {
+                        String imageUrlFromJSON = ArticleJsonParser.parseImageUrlFromJSON(response);
+                        article.setImage(imageUrlFromJSON);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                mSwipeRefreshLayout.setRefreshing(false);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @NotNull
+    private ItemTouchHelper.SimpleCallback getSimpleItemTouchCallback() {
+        return new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN | ItemTouchHelper.UP) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                int position = viewHolder.getAdapterPosition();
+                mAdapter.removePersistedAt(position);
+            }
+        };
     }
 }
