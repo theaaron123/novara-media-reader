@@ -14,16 +14,21 @@
         <activity android:name=".DeepLinkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="novaramedia.com"/>
+
+                <data
+                    android:host="novaramedia.com"
+                    android:pathPattern="..*\\/..*\\/..*\\/..*"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.aaronbaker.novaramediareader.MainActivity"
+            android:hardwareAccelerated="true"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:hardwareAccelerated="true">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
