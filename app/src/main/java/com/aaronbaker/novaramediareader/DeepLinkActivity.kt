@@ -13,7 +13,6 @@ class DeepLinkActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-
     override fun onResume() {
         super.onResume()
         val inLink = intent
@@ -21,6 +20,7 @@ class DeepLinkActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString(ArticleListFragment.PERMALINK, data.toString())
         val tx: FragmentTransaction = supportFragmentManager.beginTransaction()
+        tx.setCustomAnimations(0, 0)
         val deepLinkFragment = ArticleFullscreenFragment()
         deepLinkFragment.arguments = bundle
         tx.add(R.id.fragment_container, deepLinkFragment).attach(deepLinkFragment).commit()
