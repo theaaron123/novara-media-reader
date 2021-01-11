@@ -156,14 +156,33 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onErrorResponse(VolleyError error) {
                 mSwipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(stringRequest);
     }
 
     public void loadPersistedArticles() {
-        new OfflineArticlesAsyncTask(getContext(), mAdapter).execute();
+        new AsyncCoroutine<Integer, List<Article>>() {
+            @Override
+            public List<Article> doInBackground(Integer... params) {
+                AppDatabase databaseInstance = AppDatabase.getDatabaseInstance(getContext());
+                List<Article> articles = databaseInstance.articleDao().getAll();
+                mAdapter.setOfflinePositions(articles.size() - 1);
+                return articles;
+            }
+
+            @Override
+            public void onPostExecute(@Nullable List<Article> o) {
+                super.onPostExecute(o);
+                mAdapter.addListRecyclerItems(o);
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onPreExecute() {
+            }
+        }.execute();
         mAdapter.notifyDataSetChanged();
     }
 
