@@ -1,5 +1,6 @@
 package com.aaronbaker.novaramediareader;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -224,6 +225,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             case R.id.action_contact:
                 Article about = new Article();
                 about.setTitle("Contact Novara Media");
+                // TODO move HTML out of file
                 about.setBody("<p><a href=\"mailto:opinion@novaramedia.com\">opinion@novaramedia.com</a></p>\n" +
                         "<p><a href=\"mailto:news@novaramedia.com\">news@novaramedia.com</a></p>\n" +
                         "<p><a href=\"mailto:response@novaramedia.com\">response@novaramedia.com</a></p>\n" +
@@ -231,6 +233,13 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                         "<pre>Postal Contact:<br /><br /></pre>\n" +
                         "<pre>Thousand Hands Ltd,<br />96 Castle Lane West,<br />Bournemouth,<br />BH9 3JU.</pre>");
                 transitionToArticle(about);
+            case R.id.action_share:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Novara Media link:");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, R.string.play_store_url);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
