@@ -225,14 +225,9 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             case R.id.action_contact:
                 Article about = new Article();
                 about.setTitle("Contact Novara Media");
-                // TODO move HTML out of file
-                about.setBody("<p><a href=\"mailto:opinion@novaramedia.com\">opinion@novaramedia.com</a></p>\n" +
-                        "<p><a href=\"mailto:news@novaramedia.com\">news@novaramedia.com</a></p>\n" +
-                        "<p><a href=\"mailto:response@novaramedia.com\">response@novaramedia.com</a></p>\n" +
-                        "<p><a href=\"mailto:complaints@impress.press\">complaints@impress.press (Press Regulator)</a></p>\n" +
-                        "<pre>Postal Contact:<br /><br /></pre>\n" +
-                        "<pre>Thousand Hands Ltd,<br />96 Castle Lane West,<br />Bournemouth,<br />BH9 3JU.</pre>");
+                about.setBody(getString(R.string.contact_html));
                 transitionToArticle(about);
+                return true;
             case R.id.action_share:
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
