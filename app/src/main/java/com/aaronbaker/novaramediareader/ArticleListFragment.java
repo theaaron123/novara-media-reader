@@ -237,7 +237,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Novara Media link:");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, R.string.play_store_url);
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.play_store_url));
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
                 return true;
             default:
