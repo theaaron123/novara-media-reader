@@ -29,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private static final int TYPE = 1;
     private final Context context;
-    private List<Article> listRecyclerItem;
+    private final List<Article> listRecyclerItem;
     private final OnItemClickListener listener;
     private int offlinePositions = -1;
 
