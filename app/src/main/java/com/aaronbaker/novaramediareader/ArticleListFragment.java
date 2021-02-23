@@ -48,8 +48,6 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     private RecyclerView mRecyclerView;
     private List<Article> viewItems = new ArrayList<>();
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private SearchView mSearchView;
-
     private RecyclerAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
@@ -141,7 +139,6 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     public void retrieveArticles(final int pageNumberToRetrieve) {
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
         String url = HTTPS_NOVARAMEDIA_COM_API_ARTICLES + pageNumberToRetrieve;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -160,7 +157,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 Toast.makeText(getActivity().getApplicationContext(), "Cannot refresh feed", Toast.LENGTH_SHORT).show();
             }
         });
-        queue.add(stringRequest);
+        ApplicationController.getInstance().getRequestQueue().add(stringRequest);
     }
 
     public void loadPersistedArticles() {
