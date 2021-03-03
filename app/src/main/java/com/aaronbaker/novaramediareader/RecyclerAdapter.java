@@ -170,7 +170,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private void persistArticle(final Article article) {
-        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+        RequestQueue queue = ApplicationController.getInstance().getRequestQueue();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
                 new Response.Listener<String>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

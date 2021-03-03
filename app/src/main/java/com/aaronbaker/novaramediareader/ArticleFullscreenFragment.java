@@ -206,7 +206,7 @@ public class ArticleFullscreenFragment extends Fragment {
         super.onPause();
         SharedPreferences.Editor ed = mPrefs.edit();
         ed.putBoolean(LARGE_TEXT_KEY, mLargeText);
-        ed.commit();
+        ed.apply();
         if (getActivity() != null && getActivity().getWindow() != null) {
             getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
@@ -223,7 +223,7 @@ public class ArticleFullscreenFragment extends Fragment {
     }
 
     public void retrieveArticleFromWeb(final String permalink) {
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        RequestQueue queue = ApplicationController.getInstance().getRequestQueue();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, permalink,
                 new Response.Listener<String>() {

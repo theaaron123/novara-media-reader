@@ -28,7 +28,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -252,7 +251,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     private void retrieveSearch(final String query) {
-        final RequestQueue queue = Volley.newRequestQueue(getActivity());
+        final RequestQueue queue = ApplicationController.getInstance().getRequestQueue();
         String url = HTTPS_NOVARAMEDIA_COM_API_SEARCH + query;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -280,7 +279,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onErrorResponse(VolleyError error) {
                 mSwipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT);
+                Toast.makeText(getActivity().getApplicationContext(), "Cannot search", Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(stringRequest);
