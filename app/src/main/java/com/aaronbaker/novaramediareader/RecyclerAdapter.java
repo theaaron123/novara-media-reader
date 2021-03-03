@@ -20,7 +20,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -170,7 +169,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private void persistArticle(final Article article) {
-        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+        RequestQueue queue = ApplicationController.getInstance().getRequestQueue();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, article.getPermalink(),
                 new Response.Listener<String>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
