@@ -22,7 +22,18 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical"
             app:layout_anchor="@+id/include"
-            app:layout_anchorGravity="center"
+            app:layout_anchorGravity="top"
             tools:listitem="@layout/list_item" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/article_list_fragment"
+        app:layout_anchorGravity="bottom"
+        app:backgroundTint="@android:color/background_light"
+        app:itemBackground="@android:color/background_light"
+        app:itemIconTint="@android:color/darker_gray"
+        app:itemTextColor="@android:color/darker_gray"
+        app:menu="@menu/menu_article"></com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
