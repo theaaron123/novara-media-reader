@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aaronbaker.novaramediareader.ScrollingActivity">
+    <item
+        android:id="@+id/action_articles"
+        android:icon="@android:drawable/stat_notify_chat"
+        android:title="@string/articles"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_videos"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/action_video"
+        app:showAsAction="always" />
+</menu>

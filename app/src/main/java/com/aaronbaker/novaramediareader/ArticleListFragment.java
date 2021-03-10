@@ -1,6 +1,7 @@
 package com.aaronbaker.novaramediareader;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -36,6 +38,7 @@ import java.util.List;
 
 public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
     public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
+    public static final String HTTPS_NOVARAMEDIA_COM_API_VIDEO = "https://novaramedia.com/api/video/";
     public static final String HTTPS_NOVARAMEDIA_COM_API_SEARCH = "https://novaramedia.com/wp-json/wp/v2/posts/?search=";
     public static final String DESCRIPTION = "Description";
     public static final String TITLE = "Title";
@@ -45,12 +48,15 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     public static final String NOVARAMEDIA_COM_ABOUT = "https://novaramedia.com/about/";
     private static final String QUERY = "QUERY";
     private RecyclerView mRecyclerView;
-    private List<Article> viewItems = new ArrayList<>();
+    private List<Article> articleViewItems;
+    private List<Article> videoViewItems;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private RecyclerAdapter mAdapter;
+    private RecyclerAdapter mArticleAdapter;
+    private RecyclerAdapter mVideoAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private int pageNumber = 1;
+    private int articlePageNumber = 1;
+    private int videoPageNumber = 1;
     private RecyclerAdapter mSearchAdapter;
 
     @Nullable
@@ -63,42 +69,24 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        articleViewItems = new ArrayList<>();
+        videoViewItems = new ArrayList<>();
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.card_view);
 
         layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.getItemAnimator().setChangeDuration(0);
 
-        mAdapter = new RecyclerAdapter(getActivity(), viewItems, new RecyclerAdapter.OnItemClickListener() {
+        mArticleAdapter = new RecyclerAdapter(getActivity(), articleViewItems, new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Article article) {
                 transitionToArticle(article);
             }
         });
-        mAdapter.setHasStableIds(true);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (isRecyclerScrollable(mRecyclerView)) {
-                        retrieveArticles(++pageNumber);
-                    }
-                }
-            }
-
-            public boolean isRecyclerScrollable(RecyclerView recyclerView) {
-                return recyclerView.computeHorizontalScrollRange() > recyclerView.getWidth() || recyclerView.computeVerticalScrollRange() > recyclerView.getHeight();
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int topRowVerticalPosition =
-                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0).getTop();
-                mSwipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
-            }
-        });
+        mArticleAdapter.setHasStableIds(true);
+        mRecyclerView.setAdapter(mArticleAdapter);
+        mRecyclerView.addOnScrollListener(getScrollListener(false));
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(getSimpleItemTouchCallback());
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
@@ -119,11 +107,74 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     retrieveSearch(bundle.getString(QUERY));
                 } else {
                     loadPersistedArticles();
-                    retrieveArticles(1);
+                    retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_ARTICLES, articleViewItems, mArticleAdapter);
                 }
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         });
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                view.findViewById(R.id.bottom_navigation);
+        Configuration configuration = getResources().getConfiguration();
+        if ((configuration.uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+            bottomNavigationView.setBackgroundResource(R.color.cardview_dark_background);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            bottomNavigationView.setOnApplyWindowInsetsListener(null);
+        }
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_articles:
+                                mRecyclerView.setAdapter(mArticleAdapter);
+                                break;
+                            case R.id.action_videos:
+                                if (mVideoAdapter == null) {
+                                    mVideoAdapter = new RecyclerAdapter(getActivity(), videoViewItems, new RecyclerAdapter.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(Article article) {
+                                            transitionToArticle(article);
+                                        }
+                                    });
+                                    retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_VIDEO, videoViewItems, mVideoAdapter);
+                                }
+                                mRecyclerView.setAdapter(mVideoAdapter);
+                                mRecyclerView.addOnScrollListener(getScrollListener(true));
+                        }
+                        return true;
+                    }
+                });
+    }
+
+    @NotNull
+    private RecyclerView.OnScrollListener getScrollListener(final Boolean isVideo) {
+        return new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    if (isRecyclerScrollable(mRecyclerView)) {
+                        if (isVideo) {
+                            retrievePosts(++videoPageNumber, HTTPS_NOVARAMEDIA_COM_API_VIDEO, videoViewItems, mVideoAdapter);
+                        }
+                        retrievePosts(++articlePageNumber, HTTPS_NOVARAMEDIA_COM_API_ARTICLES, articleViewItems, mArticleAdapter);
+                    }
+                }
+            }
+
+            public boolean isRecyclerScrollable(RecyclerView recyclerView) {
+                return recyclerView.computeHorizontalScrollRange() > recyclerView.getWidth() || recyclerView.computeVerticalScrollRange() > recyclerView.getHeight();
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                int topRowVerticalPosition =
+                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0).getTop();
+                mSwipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
+            }
+        };
     }
 
     @Override
@@ -137,8 +188,8 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         searchView.setOnQueryTextListener(this);
     }
 
-    public void retrieveArticles(final int pageNumberToRetrieve) {
-        String url = HTTPS_NOVARAMEDIA_COM_API_ARTICLES + pageNumberToRetrieve;
+    public void retrievePosts(final int pageNumberToRetrieve, String apiURL, final List<Article> viewItems, final RecyclerAdapter adapter) {
+        String url = apiURL + pageNumberToRetrieve;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -147,7 +198,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     public void onResponse(String response) {
                         Log.d("On response", "page number: " + pageNumberToRetrieve);
                         viewItems.addAll(ArticleJsonParser.addItemsFromJSONArticle(response));
-                        mAdapter.notifyDataSetChanged();
+                        adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -165,38 +216,38 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             public List<Article> doInBackground(Integer... params) {
                 AppDatabase databaseInstance = AppDatabase.getDatabaseInstance(getContext());
                 List<Article> articles = databaseInstance.articleDao().getAll();
-                mAdapter.setOfflinePositions(articles.size() - 1);
+                mArticleAdapter.setOfflinePositions(articles.size() - 1);
                 return articles;
             }
 
             @Override
             public void onPostExecute(@Nullable List<Article> o) {
                 super.onPostExecute(o);
-                mAdapter.addListRecyclerItems(o);
-                mAdapter.notifyDataSetChanged();
+                mArticleAdapter.addListRecyclerItems(o);
+                mArticleAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onPreExecute() {
             }
         }.execute();
-        mAdapter.notifyDataSetChanged();
+        mArticleAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
-        viewItems.clear();
+        articleViewItems.clear();
         loadPersistedArticles();
-        retrieveArticles(0);
-        pageNumber = 1;
+        retrievePosts(0, HTTPS_NOVARAMEDIA_COM_API_ARTICLES, articleViewItems, mArticleAdapter);
+        articlePageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mAdapter.notifyDataSetChanged();
+        mArticleAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -315,7 +366,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 int position = viewHolder.getAdapterPosition();
-                mAdapter.removePersistedAt(position);
+                mArticleAdapter.removePersistedAt(position);
             }
         };
     }
