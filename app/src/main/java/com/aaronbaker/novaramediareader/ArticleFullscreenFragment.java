@@ -234,6 +234,8 @@ public class ArticleFullscreenFragment extends Fragment {
                         Element mainBody = document.body();
                         if (mainBody.getElementById("single-articles-copy") != null) {
                             mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("single-articles-copy").html()), "text/html", "UTF-8", permalink);
+                        } else if (mainBody.getElementById("post") != null) {
+                            mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("post").html()), "text/html", "UTF-8", permalink);
                         } else {
                             mArticleBody.loadUrl(permalink);
                         }
