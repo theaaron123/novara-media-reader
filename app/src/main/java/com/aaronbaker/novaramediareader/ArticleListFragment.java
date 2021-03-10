@@ -114,6 +114,9 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 view.findViewById(R.id.bottom_navigation);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            bottomNavigationView.setOnApplyWindowInsetsListener(null);
+        }
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
