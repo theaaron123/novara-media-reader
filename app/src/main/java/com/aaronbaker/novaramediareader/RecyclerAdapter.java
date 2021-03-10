@@ -158,11 +158,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.offlinePositions = offlinePositions;
     }
 
-    public void removeAll() {
-        listRecyclerItem.clear();
-        notifyDataSetChanged();
-    }
-
     private void deleteArticle(final String title) {
         final AppDatabase db = AppDatabase.getDatabaseInstance(context);
         AsyncTask.execute(new Runnable() {
