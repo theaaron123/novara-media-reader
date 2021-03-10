@@ -8,9 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/article_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,6 +25,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_anchor="@+id/article_list_fragment"
@@ -35,5 +34,5 @@
         app:itemBackground="@android:color/background_light"
         app:itemIconTint="@android:color/darker_gray"
         app:itemTextColor="@android:color/darker_gray"
-        app:menu="@menu/menu_article"></com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/menu_article" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

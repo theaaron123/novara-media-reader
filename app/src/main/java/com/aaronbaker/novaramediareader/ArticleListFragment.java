@@ -28,6 +28,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -36,6 +37,7 @@ import java.util.List;
 
 public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
     public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
+    public static final String HTTPS_NOVARAMEDIA_COM_API_VIDEO = "https://novaramedia.com/api/video/";
     public static final String HTTPS_NOVARAMEDIA_COM_API_SEARCH = "https://novaramedia.com/wp-json/wp/v2/posts/?search=";
     public static final String DESCRIPTION = "Description";
     public static final String TITLE = "Title";
@@ -83,7 +85,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                 super.onScrollStateChanged(recyclerView, newState);
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
                     if (isRecyclerScrollable(mRecyclerView)) {
-                        retrieveArticles(++pageNumber);
+                        retrievePosts(++pageNumber, HTTPS_NOVARAMEDIA_COM_API_ARTICLES);
                     }
                 }
             }
@@ -119,11 +121,34 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     retrieveSearch(bundle.getString(QUERY));
                 } else {
                     loadPersistedArticles();
-                    retrieveArticles(1);
+                    retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_ARTICLES);
                 }
                 mSwipeRefreshLayout.setRefreshing(false);
             }
         });
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                view.findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_articles:
+                                viewItems.clear();
+                                mAdapter.removeAll();
+                                loadPersistedArticles();
+                                retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_ARTICLES);
+                                mAdapter.notifyDataSetChanged();
+                            case R.id.action_videos:
+                                viewItems.clear();
+                                mAdapter.removeAll();
+                                retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_VIDEO);
+                                mAdapter.notifyDataSetChanged();
+                        }
+                        return true;
+                    }
+                });
     }
 
     @Override
@@ -137,8 +162,8 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         searchView.setOnQueryTextListener(this);
     }
 
-    public void retrieveArticles(final int pageNumberToRetrieve) {
-        String url = HTTPS_NOVARAMEDIA_COM_API_ARTICLES + pageNumberToRetrieve;
+    public void retrievePosts(final int pageNumberToRetrieve, String apiURL) {
+        String url = apiURL + pageNumberToRetrieve;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -188,7 +213,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         mSwipeRefreshLayout.setRefreshing(true);
         viewItems.clear();
         loadPersistedArticles();
-        retrieveArticles(0);
+        retrievePosts(0, HTTPS_NOVARAMEDIA_COM_API_ARTICLES);
         pageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
     }
