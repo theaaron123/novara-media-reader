@@ -12,5 +12,5 @@
         android:id="@+id/action_videos"
         android:icon="@android:drawable/ic_media_play"
         android:title="@string/action_video"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 </menu>

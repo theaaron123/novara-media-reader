@@ -1,6 +1,7 @@
 package com.aaronbaker.novaramediareader;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -114,6 +115,10 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 view.findViewById(R.id.bottom_navigation);
+        Configuration configuration = getResources().getConfiguration();
+        if ((configuration.uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+            bottomNavigationView.setBackgroundResource(R.color.cardview_dark_background);
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
             bottomNavigationView.setOnApplyWindowInsetsListener(null);
         }
