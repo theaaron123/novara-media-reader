@@ -235,7 +235,7 @@ public class ArticleFullscreenFragment extends Fragment {
                         if (mainBody.getElementById("single-articles-copy") != null) {
                             mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("single-articles-copy").html()), "text/html", "UTF-8", permalink);
                         } else if (mainBody.getElementById("post") != null) {
-                            mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(mainBody.getElementById("post").html()), "text/html", "UTF-8", permalink);
+                            mArticleBody.loadDataWithBaseURL(permalink, rewriteHTMLHeader(parseVideo(document)), "text/html", "UTF-8", permalink);
                         } else {
                             mArticleBody.loadUrl(permalink);
                         }
@@ -247,6 +247,13 @@ public class ArticleFullscreenFragment extends Fragment {
             }
         });
         queue.add(stringRequest);
+    }
+
+    private String parseVideo(Document document) {
+        if (document.select("p").size() >= 1) {
+            return document.select("p").first().toString() + document.select("p").get(1).toString() + document.select("iframe").first().toString();
+        }
+        return null;
     }
 
     public void retrieveArticleFromBody(final String body, String permalink) {
