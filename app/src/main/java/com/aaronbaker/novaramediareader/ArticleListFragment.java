@@ -268,23 +268,22 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_contact:
-                Article about = new Article();
-                about.setTitle("Contact Novara Media");
-                about.setBody(getString(R.string.contact_html));
-                transitionToArticle(about);
-                return true;
-            case R.id.action_share:
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Novara Media link:");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.play_store_url));
-                startActivity(Intent.createChooser(sharingIntent, "Share via"));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_contact) {
+            Article about = new Article();
+            about.setTitle("Contact Novara Media");
+            about.setBody(getString(R.string.contact_html));
+            transitionToArticle(about);
+            return true;
+        } else if (itemId == R.id.action_share) {
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Novara Media link:");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.play_store_url));
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            return false;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void transitionToArticle(Article article) {

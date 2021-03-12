@@ -272,33 +272,36 @@ public class ArticleFullscreenFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_share:
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Novara Media link:");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, mArticleBody.getUrl());
-                startActivity(Intent.createChooser(sharingIntent, "Share via"));
-                return true;
-            case R.id.action_font:
-                if (mArticleBody != null) {
-                    WebSettings mArticleBodySettings = mArticleBody.getSettings();
-                    if (mArticleBodySettings.getTextZoom() == 100) {
-                        mArticleBodySettings.setTextZoom(145);
-                        item.setChecked(true);
-                        mLargeText = true;
-                    } else {
-                        mArticleBodySettings.setTextZoom(100);
-                        item.setChecked(false);
-                        mLargeText = false;
-                    }
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_share) {
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Novara Media link:");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, mArticleBody.getUrl());
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            return true;
+        } else if (itemId == R.id.action_font) {
+            if (mArticleBody != null) {
+                WebSettings mArticleBodySettings = mArticleBody.getSettings();
+                if (mArticleBodySettings.getTextZoom() == 100) {
+                    mArticleBodySettings.setTextZoom(145);
+                    item.setChecked(true);
+                    mLargeText = true;
+                } else {
+                    mArticleBodySettings.setTextZoom(100);
+                    item.setChecked(false);
+                    mLargeText = false;
                 }
-            case R.id.action_contact:
-                retrieveArticleFromWeb(NOVARAMEDIA_COM_ABOUT);
+                return true;
+            }
 
-            default:
-                return super.onOptionsItemSelected(item);
+            retrieveArticleFromWeb(NOVARAMEDIA_COM_ABOUT);
+            return true;
+        } else if (itemId == R.id.action_contact) {
+            retrieveArticleFromWeb(NOVARAMEDIA_COM_ABOUT);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void toggle() {
