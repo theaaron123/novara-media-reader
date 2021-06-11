@@ -26,16 +26,15 @@ object ArticleJsonParser {
     @JvmStatic
     fun addItemsFromJSONArticle(jsonDataString: String?): List<Article>? {
         try {
-            val jsonObject = JSONObject(jsonDataString)
-            val jsonArray = jsonObject.getJSONArray("posts")
+            val jsonArray = JSONArray(jsonDataString)
             val articleList: MutableList<Article> = ArrayList()
             for (i in 0 until jsonArray.length()) {
                 val itemObj = jsonArray.getJSONObject(i)
-                val name = itemObj.getString("title")
-                val shortDesc = itemObj.getString("short_desc")
-                val permalink = itemObj.getString("permalink")
-                val imageLink = itemObj.getString("thumb_medium")
-                articleList.add(Article(name, stripHTML(shortDesc), permalink, imageLink, null))
+                val name = itemObj.getJSONObject("title").getString("rendered")
+                val shortDesc = itemObj.getJSONObject("excerpt").getString("rendered")
+                val permalink = itemObj.getString("link")
+                val imageLink = itemObj.getString("featured_media")
+                articleList.add(Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, null))
             }
             return articleList
         } catch (e: JSONException) {
@@ -67,7 +66,11 @@ object ArticleJsonParser {
     @JvmStatic
     fun parseImageUrlFromJSON(mediaJSON: String?): String {
         try {
-            return JSONObject(mediaJSON).getJSONObject("media_details").getJSONObject("sizes").getJSONObject("medium").getString("source_url")
+            return JSONObject(mediaJSON)
+                    .getJSONObject("media_details")
+                    .getJSONObject("sizes")
+                    .getJSONObject("medium")
+                    .getString("source_url")
         } catch (e: JSONException) {
             Log.d(ArticleListFragment::class.java.name, "parseImageUrlFromJSON: ", e)
         }
@@ -89,6 +92,10 @@ object ArticleJsonParser {
     }
 
     private fun stripHTML(html: String): String {
-        return Html.fromHtml(html).toString().replace("\n".toRegex(), "").trim { it <= ' ' }
+        return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY).toString()
+        } else {
+            Html.fromHtml(html).toString()
+        }
     }
 }

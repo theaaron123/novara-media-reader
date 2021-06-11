@@ -37,8 +37,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
-    public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/api/articles/";
-    public static final String HTTPS_NOVARAMEDIA_COM_API_VIDEO = "https://novaramedia.com/api/video/";
+    public static final String HTTPS_NOVARAMEDIA_COM_API_ARTICLES = "https://novaramedia.com/wp-json/wp/v2/posts/?categories=2&page=";
+    public static final String HTTPS_NOVARAMEDIA_COM_API_VIDEO = "https://novaramedia.com/wp-json/wp/v2/posts/?categories=828&page=";
     public static final String HTTPS_NOVARAMEDIA_COM_API_SEARCH = "https://novaramedia.com/wp-json/wp/v2/posts/?search=";
     public static final String DESCRIPTION = "Description";
     public static final String TITLE = "Title";
@@ -189,6 +189,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     public void retrievePosts(final int pageNumberToRetrieve, String apiURL, final List<Article> viewItems, final RecyclerAdapter adapter) {
+        final RequestQueue queue = ApplicationController.getInstance().getRequestQueue();
         String url = apiURL + pageNumberToRetrieve;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -197,7 +198,12 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                     @Override
                     public void onResponse(String response) {
                         Log.d("On response", "page number: " + pageNumberToRetrieve);
-                        viewItems.addAll(ArticleJsonParser.addItemsFromJSONArticle(response));
+                        List<Article> articles = ArticleJsonParser.addItemsFromJSONArticle(response);
+                        for (Article article : articles) {
+                            StringRequest imageRequest = getArticleImageUrl(article);
+                            queue.add(imageRequest);
+                        }
+                        viewItems.addAll(articles);
                         adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
@@ -312,7 +318,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
                         final List<Article> articles = ArticleJsonParser.addItemsFromJSONSearch(response);
 
                         for (Article article : articles) {
-                            StringRequest imageRequest = getSearchedArticleImageUrl(article);
+                            StringRequest imageRequest = getArticleImageUrl(article);
                             queue.add(imageRequest);
                         }
 
@@ -335,7 +341,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         queue.add(stringRequest);
     }
 
-    private StringRequest getSearchedArticleImageUrl(final Article article) {
+    private StringRequest getArticleImageUrl(final Article article) {
         String url = "https://novaramedia.com/wp-json/wp/v2/media/" + article.getImage();
         return new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
