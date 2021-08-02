@@ -245,7 +245,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         mSwipeRefreshLayout.setRefreshing(true);
         articleViewItems.clear();
         loadPersistedArticles();
-        retrievePosts(0, HTTPS_NOVARAMEDIA_COM_API_ARTICLES, articleViewItems, mArticleAdapter);
+        retrievePosts(1, HTTPS_NOVARAMEDIA_COM_API_ARTICLES, articleViewItems, mArticleAdapter);
         articlePageNumber = 1;
         mSwipeRefreshLayout.setRefreshing(false);
     }
