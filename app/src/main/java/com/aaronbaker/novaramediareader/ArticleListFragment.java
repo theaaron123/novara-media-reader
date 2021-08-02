@@ -277,7 +277,7 @@ public class ArticleListFragment extends Fragment implements SwipeRefreshLayout.
         int itemId = item.getItemId();
         if (itemId == R.id.action_contact) {
             Article about = new Article();
-            about.setTitle("Contact Novara Media");
+            about.setTitle("Contact Details: Novara Media");
             about.setBody(getString(R.string.contact_html));
             transitionToArticle(about);
             return true;
