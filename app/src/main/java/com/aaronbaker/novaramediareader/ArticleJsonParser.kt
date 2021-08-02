@@ -93,9 +93,9 @@ object ArticleJsonParser {
 
     private fun stripHTML(html: String): String {
         return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY).toString()
+            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY).toString().replace("\n".toRegex(), "").trim { it <= ' ' }
         } else {
-            Html.fromHtml(html).toString()
+            Html.fromHtml(html).toString().replace("\n".toRegex(), "").trim { it <= ' ' }
         }
     }
 }
