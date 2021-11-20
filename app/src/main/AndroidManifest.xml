@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name="com.aaronbaker.novaramediareader.MainActivity"
+            android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
