@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_nm_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeepLinkActivity">
+        <activity
+            android:name=".DeepLinkActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -30,7 +32,8 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
