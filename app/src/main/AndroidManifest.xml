@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,16 +15,17 @@
         <activity
             android:name=".DeepLinkActivity"
             android:exported="true">
-            <intent-filter>
+            <tools:validation testUrl="https://novaramedia.com/2023/08/29/sharon-grahams-strategy-shows-unions-can-win-without-the-labour-party" />
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <data android:scheme="https" />
                 <data
                     android:host="novaramedia.com"
-                    android:pathPattern="..*\\/..*\\/..*\\/..*"
-                    android:scheme="https" />
+                    android:pathAdvancedPattern="..*\\/..*\\/..*\\/..*" />
             </intent-filter>
         </activity>
         <activity
