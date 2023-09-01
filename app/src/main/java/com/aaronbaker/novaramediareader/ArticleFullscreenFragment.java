@@ -1,5 +1,7 @@
 package com.aaronbaker.novaramediareader;
 
+import static android.os.Build.VERSION.SDK_INT;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -160,6 +162,27 @@ public class ArticleFullscreenFragment extends Fragment {
                 && WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
             WebSettingsCompat.setForceDark(mArticleBody.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
         }
+
+        if (SDK_INT >= 32) {
+            if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+                try {
+                    WebSettingsCompat.setAlgorithmicDarkeningAllowed(mArticleBody.getSettings(), true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+
+            if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+
+                int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+                if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+                    WebSettingsCompat.setForceDark(mArticleBody.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+                }
+            }
+        }
+
 
         mPrefs = getActivity().getPreferences(Context.MODE_PRIVATE);
         mLargeText = mPrefs.getBoolean(LARGE_TEXT_KEY, false);
@@ -375,6 +398,7 @@ public class ArticleFullscreenFragment extends Fragment {
                 "</style></head>";
         return "<html>" + head + "<body>" + body + "</body></html>";
     }
+
     private class FullscreenVideoChrome extends WebChromeClient {
 
         private View mCustomView;
@@ -382,19 +406,18 @@ public class ArticleFullscreenFragment extends Fragment {
         private int mOriginalOrientation;
         private int mOriginalSystemUiVisibility;
 
-        FullscreenVideoChrome() {}
+        FullscreenVideoChrome() {
+        }
 
-        public Bitmap getDefaultVideoPoster()
-        {
+        public Bitmap getDefaultVideoPoster() {
             if (mCustomView == null) {
                 return null;
             }
             return BitmapFactory.decodeResource(getActivity().getApplicationContext().getResources(), 2130837573);
         }
 
-        public void onHideCustomView()
-        {
-            ((FrameLayout)getActivity().getWindow().getDecorView()).removeView(this.mCustomView);
+        public void onHideCustomView() {
+            ((FrameLayout) getActivity().getWindow().getDecorView()).removeView(this.mCustomView);
             this.mCustomView = null;
             getActivity().getWindow().getDecorView().setSystemUiVisibility(this.mOriginalSystemUiVisibility);
             getActivity().setRequestedOrientation(this.mOriginalOrientation);
@@ -402,10 +425,8 @@ public class ArticleFullscreenFragment extends Fragment {
             this.mCustomViewCallback = null;
         }
 
-        public void onShowCustomView(View paramView, WebChromeClient.CustomViewCallback paramCustomViewCallback)
-        {
-            if (this.mCustomView != null)
-            {
+        public void onShowCustomView(View paramView, WebChromeClient.CustomViewCallback paramCustomViewCallback) {
+            if (this.mCustomView != null) {
                 onHideCustomView();
                 return;
             }
@@ -413,7 +434,7 @@ public class ArticleFullscreenFragment extends Fragment {
             this.mOriginalSystemUiVisibility = getActivity().getWindow().getDecorView().getSystemUiVisibility();
             this.mOriginalOrientation = getActivity().getRequestedOrientation();
             this.mCustomViewCallback = paramCustomViewCallback;
-            ((FrameLayout)getActivity().getWindow().getDecorView()).addView(this.mCustomView, new FrameLayout.LayoutParams(-1, -1));
+            ((FrameLayout) getActivity().getWindow().getDecorView()).addView(this.mCustomView, new FrameLayout.LayoutParams(-1, -1));
             getActivity().getWindow().getDecorView().setSystemUiVisibility(3846 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
     }
