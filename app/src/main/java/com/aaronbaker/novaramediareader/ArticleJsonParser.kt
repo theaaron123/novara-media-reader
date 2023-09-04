@@ -9,6 +9,7 @@ import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.text.SimpleDateFormat
 import java.util.*
 
 object ArticleJsonParser {
@@ -31,7 +32,12 @@ object ArticleJsonParser {
             for (i in 0 until jsonArray.length()) {
                 val itemObj = jsonArray.getJSONObject(i)
                 val name = itemObj.getJSONObject("title").getString("rendered")
-                val shortDesc = itemObj.getJSONObject("excerpt").getString("rendered")
+                var shortDesc = itemObj.getJSONObject("excerpt").getString("rendered")
+                val date = itemObj.getString("date")
+                val parser =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                val formatter = SimpleDateFormat("dd.MM.yyyy")
+                val formattedDate = formatter.format(parser.parse(date))
+                shortDesc = "$formattedDate $shortDesc"
                 val permalink = itemObj.getString("link")
                 val imageLink = itemObj.getString("featured_media")
                 articleList.add(Article(stripHTML(name), stripHTML(shortDesc), permalink, imageLink, null))
